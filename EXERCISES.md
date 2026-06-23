@@ -929,7 +929,81 @@ Clear `staging/.processed_files.log` line and re-run.
 <a id="exercise-13-simulate-file-update"></a>
 ### Exercise 13 — Simulate file update
 
-Add row `E007` to `learning/my_team.csv`, re-upload to MinIO, clear processed log, re-run pipeline.
+Simulates HR sending an **updated** employee file through MinIO (Phase C).
+
+**Step 1 — Add E007 to the CSV**
+
+Open `learning/my_team.csv` and append this line after E006:
+
+```csv
+E007,Alice,Johnson,1992-05-20,300 Maple Dr,Austin,TX,78702,512-555-0999,alice@acme.com,Acme Corp,Marketing,2024-06-01,Active
+```
+
+Or from the terminal:
+
+```bash
+cd ~/Dev/Tutorials/senzing-demo
+echo 'E007,Alice,Johnson,1992-05-20,300 Maple Dr,Austin,TX,78702,512-555-0999,alice@acme.com,Acme Corp,Marketing,2024-06-01,Active' >> learning/my_team.csv
+```
+
+**Step 2 — Rebuild Parquet, upload to MinIO, clear processed log, re-run pipeline**
+
+```bash
+cd ~/Dev/Tutorials/senzing-demo
+docker compose up -d
+source ./setup-env.sh && source ./setup-minio-env.sh
+
+# CSV → Parquet
+docker run --rm \
+  -e CSV_INPUT="/data/learning/my_team.csv" \
+  -e PARQUET_OUTPUT="/data/parquet/my_team.parquet" \
+  -v ${PWD}:/data -w /data python:3.12-slim bash -c \
+  'pip -q install pandas pyarrow && python learning/csv_to_parquet.py'
+
+# Upload to MinIO (local S3)
+aws --endpoint-url http://localhost:9000 s3 cp \
+  parquet/my_team.parquet \
+  s3://senzing-incoming/my_team/my_team.parquet
+
+# Clear MY_TEAM_PQ from processed log so pipeline runs again
+grep -v '^MY_TEAM_PQ-' staging/.processed_files.log > staging/.tmp 2>/dev/null || true
+mv staging/.tmp staging/.processed_files.log 2>/dev/null || true
+
+# Run pipeline only for my_team (not the full run_all_from_minio.sh)
+S3_URI=s3://senzing-incoming/my_team/ \
+SENZING_DATA_SOURCE=MY_TEAM_PQ \
+./pipeline/run_my_team_pipeline.sh
+```
+
+**Shortcut** (does steps 2–4 in one script, but still add E007 to CSV first):
+
+```bash
+# After editing learning/my_team.csv:
+grep -v '^MY_TEAM_PQ-' staging/.processed_files.log > staging/.tmp 2>/dev/null || true
+mv staging/.tmp staging/.processed_files.log 2>/dev/null || true
+source ./setup-env.sh && source ./setup-minio-env.sh
+./pipeline/run_my_team_from_minio.sh
+```
+
+**Step 3 — Verify in sz_explorer**
+
+```bash
+docker run --rm -it -v ${PWD}:/data -w /data \
+  -e SENZING_ENGINE_CONFIGURATION_JSON senzing/senzingsdk-tools
+```
+
+```
+sz_explorer
+get MY_TEAM_PQ E007
+quick_look
+quit
+```
+
+**Expect:** E007 (Alice Johnson) loads; `MY_TEAM_PQ` count increases.
+
+> **Note:** Re-loading the **full** file reloads E001–E006 as well, which can create duplicate records in Senzing. That is expected in this learning lab — real pipelines use incremental files or purge-by-source.
+
+**✅ Done when:** `get MY_TEAM_PQ E007` shows Alice Johnson.
 
 <a id="exercise-14-scheduled-batch"></a>
 ### Exercise 14 — Scheduled batch
