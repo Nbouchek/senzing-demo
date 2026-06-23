@@ -9,7 +9,7 @@ Use this doc in order the first time, then as a quick reference later.
 
 ## Table of contents
 
-**Workbooks:** [EXERCISES.md](./EXERCISES.md) · [EDA-TUTORIAL.md](./EDA-TUTORIAL.md) · [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md)
+**Workbooks:** [EXERCISES.md](./EXERCISES.md) · [EDA-TUTORIAL.md](./EDA-TUTORIAL.md) · [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md) · **[EXPLORER-SESSION.md](./EXPLORER-SESSION.md)** ← open sz_explorer
 
 - [1. Core concepts (read first)](#1-core-concepts-read-first)
   - [What Senzing does](#what-senzing-does)
@@ -187,14 +187,31 @@ source ./setup-minio-env.sh       # REQUIRED for S3/MinIO pipeline
 | **Container shell** | `root@...:/data#` | `sz_explorer`, `sz_configtool` |
 | **sz_explorer** | `(szeda)` | `get`, `search`, `load`, `cross_source_summary` |
 
-Enter container:
+**New to sz_explorer?** Read **[EXPLORER-SESSION.md](./EXPLORER-SESSION.md)** — full open/exit steps with prompts.
+
+### Open sz_explorer (copy every time)
+
+**Step 1 — Mac** (`➜ senzing-demo`):
 
 ```bash
+cd ~/Dev/Tutorials/senzing-demo
+source ./setup-env.sh
+
 docker run --rm -it \
   -v ${PWD}:/data -w /data \
   -e SENZING_ENGINE_CONFIGURATION_JSON \
   senzing/senzingsdk-tools
 ```
+
+**Step 2 — Container** (`root@....:/data#`):
+
+```
+sz_explorer
+```
+
+**Step 3 — Explorer** (`(szeda)`): type `get`, `search`, `load`, etc.
+
+**Step 4 — Exit:** `quit` then `exit` (see [EXPLORER-SESSION.md](./EXPLORER-SESSION.md)).
 
 **Always mount** `-v ${PWD}:/data -w /data` so snapshot/audit JSON files are visible.
 
@@ -378,7 +395,9 @@ docker run --rm -u $(id -u) -v ${PWD}:/data \
 <a id="7-sz_explorer-all-commands"></a>
 ## 7. sz_explorer — all commands
 
-Start: inside container → `sz_explorer` → prompt `(szeda)`
+**Open explorer first:** [EXPLORER-SESSION.md](./EXPLORER-SESSION.md) (Mac → container → `(szeda)`).
+
+Quick version: Mac `source ./setup-env.sh` → `docker run ... senzing/senzingsdk-tools` → `sz_explorer` → commands below → `quit` → `exit`.
 
 <a id="navigation-keys-reports-compare"></a>
 ### Navigation keys (reports & compare)

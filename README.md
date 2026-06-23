@@ -58,7 +58,7 @@ done
 # 4. Explore
 docker run --rm -it -v ${PWD}:/data -w /data \
   -e SENZING_ENGINE_CONFIGURATION_JSON senzing/senzingsdk-tools
-# then: sz_explorer → quick_look → search robert smith
+# 4. Explore — see EXPLORER-SESSION.md: docker run ... → sz_explorer → quick_look → search robert smith
 ```
 
 **Every session after that:**
@@ -98,6 +98,7 @@ Senzing does **not** load Parquet directly. The pipeline always: **Parquet → m
 
 | Guide | Topics |
 |-------|--------|
+| [**EXPLORER-SESSION.md**](EXPLORER-SESSION.md) | **Start here for sz_explorer** — open, use, exit |
 | [**CHEATSHEET.md**](CHEATSHEET.md) | Quick reference — commands, errors, workflows |
 | [**EDA-TUTORIAL.md**](EDA-TUTORIAL.md) | Official [Senzing EDA](https://senzing.zendesk.com/hc/en-us/sections/360009388534-Exploratory-Data-Analysis-EDA) series |
 | [**EXERCISES.md**](EXERCISES.md) | Hands-on exercises 0–14 with checklists |
@@ -141,12 +142,16 @@ docker run --rm -u $(id -u) -v ${PWD}:/data -w /data \
 
 ### Enter `sz_explorer`
 
+See **[EXPLORER-SESSION.md](./EXPLORER-SESSION.md)** for the full step-by-step (Mac → container → `(szeda)` → exit).
+
 ```bash
+source ./setup-env.sh
 docker run --rm -it -v ${PWD}:/data -w /data \
   -e SENZING_ENGINE_CONFIGURATION_JSON senzing/senzingsdk-tools
+# at root@...:/data#  →  sz_explorer
+# at (szeda)  →  get CUSTOMERS 1070, search robert smith, load truthset_snapshot.json, ...
+# quit  →  exit
 ```
-
-Inside explorer: `get CUSTOMERS 1070`, `search robert smith`, `load truthset_snapshot.json`, `cross_source_summary`.
 
 ---
 
@@ -155,6 +160,7 @@ Inside explorer: `get CUSTOMERS 1070`, `search robert smith`, `load truthset_sna
 ```text
 senzing-demo/
 ├── README.md                    ← you are here
+├── EXPLORER-SESSION.md          ← how to open sz_explorer (read this first)
 ├── CHEATSHEET.md                ← command reference
 ├── EDA-TUTORIAL.md              ← EDA workbook
 ├── EXERCISES.md                 ← step-by-step exercises

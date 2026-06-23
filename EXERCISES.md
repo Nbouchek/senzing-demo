@@ -5,7 +5,7 @@ Companion reference: [CHEATSHEET.md](./CHEATSHEET.md)
 
 **Stack:** Mac + Docker + PostgreSQL + MinIO (local S3). **No AWS account required.**
 
-**Related workbooks:** [EDA-TUTORIAL.md](./EDA-TUTORIAL.md) · [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md)
+**Related workbooks:** [EDA-TUTORIAL.md](./EDA-TUTORIAL.md) · [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md) · **[EXPLORER-SESSION.md](./EXPLORER-SESSION.md)**
 
 ---
 
@@ -124,16 +124,25 @@ source ./setup-minio-env.sh
 ```
 
 <a id="enter-senzing-tools-container-repeat-whenever-needed"></a>
-### Enter Senzing tools container (repeat whenever needed)
+### Open sz_explorer (repeat whenever a step says "explore" or "verify")
+
+See **[EXPLORER-SESSION.md](./EXPLORER-SESSION.md)** for details.
+
+**Step 1 — Mac:**
 
 ```bash
-docker run --rm -it \
-  -v ${PWD}:/data -w /data \
-  -e SENZING_ENGINE_CONFIGURATION_JSON \
-  senzing/senzingsdk-tools
+cd ~/Dev/Tutorials/senzing-demo
+source ./setup-env.sh
+
+docker run --rm -it -v ${PWD}:/data -w /data \
+  -e SENZING_ENGINE_CONFIGURATION_JSON senzing/senzingsdk-tools
 ```
 
-Then type `sz_explorer` for interactive exploration.
+**Step 2 — Container** (`root@....:/data#`): type `sz_explorer`
+
+**Step 3 — Explorer** (`(szeda)`): type commands from the exercise
+
+**Step 4 — Exit:** `quit` then `exit`
 
 <a id="sz_explorer-navigation-keys"></a>
 ### sz_explorer navigation keys
@@ -908,7 +917,7 @@ Verify: `get MY_TEAM E001` and `get MY_TEAM E002` → same entity (Jane Doe dupl
 <a id="exercise-10-disclosed-relationships"></a>
 ### Exercise 10 — Disclosed relationships
 
-In `sz_explorer`: `get REFERENCE 2012`, `get REFERENCE 2013`, `get REFERENCE 2014` (note: `2011` is a relationship anchor key, not a record ID).
+Open [EXPLORER-SESSION.md](./EXPLORER-SESSION.md), then at `(szeda)` run: `get REFERENCE 2012`, `get REFERENCE 2013`, `get REFERENCE 2014` (note: `2011` is a relationship anchor key, not a record ID).
 
 <a id="exercise-11-minio-pipeline-for-my_team-phase-c"></a>
 ### Exercise 11 — MinIO pipeline for MY_TEAM (Phase C)
@@ -987,17 +996,18 @@ source ./setup-env.sh && source ./setup-minio-env.sh
 
 **Step 3 — Verify in sz_explorer**
 
-```bash
-docker run --rm -it -v ${PWD}:/data -w /data \
-  -e SENZING_ENGINE_CONFIGURATION_JSON senzing/senzingsdk-tools
-```
+**Step 1 — Mac:** `source ./setup-env.sh` then start container (same as [EXPLORER-SESSION.md](./EXPLORER-SESSION.md))
+
+**Step 2 — Container:** `sz_explorer`
+
+**Step 3 — Explorer (`(szeda)`):**
 
 ```
-sz_explorer
 get MY_TEAM_PQ E007
 quick_look
-quit
 ```
+
+**Step 4 — Exit:** `quit` then `exit`
 
 **Expect:** E007 (Alice Johnson) loads; `MY_TEAM_PQ` count increases.
 

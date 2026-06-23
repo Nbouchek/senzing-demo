@@ -7,7 +7,7 @@ Step-by-step guide for **mapping your own data** and **operating the pipeline lo
 
 **Prerequisites:** Completed [EDA-TUTORIAL.md](./EDA-TUTORIAL.md) (explore, snapshot, audit).
 
-**Companion:** [CHEATSHEET.md](./CHEATSHEET.md) · [EXERCISES.md](./EXERCISES.md) · [EDA-TUTORIAL.md](./EDA-TUTORIAL.md)
+**Companion:** [CHEATSHEET.md](./CHEATSHEET.md) · [EXERCISES.md](./EXERCISES.md) · [EDA-TUTORIAL.md](./EDA-TUTORIAL.md) · **[EXPLORER-SESSION.md](./EXPLORER-SESSION.md)** (how to open `sz_explorer`)
 
 ---
 
@@ -241,15 +241,27 @@ docker run --rm -u $(id -u) -v ${PWD}:/data \
   senzing/sz-file-loader -f /data/staging/mapped_my_team.jsonl
 ```
 
-**Explore (container):**
+> Full open/exit guide: [EXPLORER-SESSION.md](./EXPLORER-SESSION.md)
+
+**Step 1 — Mac terminal** (`➜ senzing-demo`):
 
 ```bash
+cd ~/Dev/Tutorials/senzing-demo
+source ./setup-env.sh
+
 docker run --rm -it -v ${PWD}:/data -w /data \
   -e SENZING_ENGINE_CONFIGURATION_JSON senzing/senzingsdk-tools
 ```
 
+**Step 2 — Container** (`root@....:/data#`). Type:
+
 ```
 sz_explorer
+```
+
+**Step 3 — Explorer** (`(szeda)`). Type:
+
+```
 quick_look                              # MY_TEAM should appear
 get MY_TEAM E001
 get MY_TEAM E002                        # Same entity ID as E001?
@@ -261,8 +273,15 @@ get MY_TEAM E004 detail                 # John Smith pair
 load truthset_snapshot.json
 data_source_summary                     # MY_TEAM duplicates
 cross_source_summary                    # MY_TEAM vs CUSTOMERS/WATCHLIST?
-quit
 ```
+
+**Step 4 — Exit:**
+
+```
+quit          # leave explorer → container
+exit          # leave container → Mac
+```
+
 
 **Expected answers:**
 
@@ -297,7 +316,25 @@ Your truth set `reference.jsonl` already uses them. Example pattern:
 {"REL_POINTER_DOMAIN": "REFERENCE", "REL_POINTER_KEY": "2011", "REL_POINTER_ROLE": "Owns 60%"}
 ```
 
-**Explore in sz_explorer:**
+> Full open/exit guide: [EXPLORER-SESSION.md](./EXPLORER-SESSION.md)
+
+**Step 1 — Mac terminal** (`➜ senzing-demo`):
+
+```bash
+cd ~/Dev/Tutorials/senzing-demo
+source ./setup-env.sh
+
+docker run --rm -it -v ${PWD}:/data -w /data \
+  -e SENZING_ENGINE_CONFIGURATION_JSON senzing/senzingsdk-tools
+```
+
+**Step 2 — Container** (`root@....:/data#`). Type:
+
+```
+sz_explorer
+```
+
+**Step 3 — Explorer** (`(szeda)`). Type:
 
 ```
 get REFERENCE 2012
@@ -323,7 +360,9 @@ get REFERENCE 2091
 how 100009
 ```
 
-Look at `TOTALS.DISCLOSED_RELATION` in snapshot JSON:
+**Step 4 — Exit:** `quit` then `exit`
+
+Look at `TOTALS.DISCLOSED_RELATION` in snapshot JSON (**Mac**):
 
 ```bash
 python3 -c "
@@ -418,21 +457,47 @@ source ./setup-env.sh && source ./setup-minio-env.sh
 3. Register `MY_TEAM_PQ` data source
 4. `run_my_team_pipeline.sh`: sync from MinIO → map → load → snapshot
 
-**Verify:**
+**Verify mapped file (Mac):**
 
 ```bash
 head -1 staging/mapped_my_team_pq.jsonl | python3 -m json.tool
 ```
 
+> Full open/exit guide: [EXPLORER-SESSION.md](./EXPLORER-SESSION.md)
+
+**Step 1 — Mac terminal** (`➜ senzing-demo`):
+
+```bash
+cd ~/Dev/Tutorials/senzing-demo
+source ./setup-env.sh
+
+docker run --rm -it -v ${PWD}:/data -w /data \
+  -e SENZING_ENGINE_CONFIGURATION_JSON senzing/senzingsdk-tools
+```
+
+**Step 2 — Container** (`root@....:/data#`). Type:
+
 ```
 sz_explorer
+```
+
+**Step 3 — Explorer** (`(szeda)`). Type:
+
+```
 get MY_TEAM_PQ E001
 get MY_TEAM E001                 # Compare with Phase B direct load
 quick_look
 load truthset_snapshot.json
 cross_source_summary             # MY_TEAM_PQ ↔ CUSTOMERS?
-quit
 ```
+
+**Step 4 — Exit:**
+
+```
+quit          # leave explorer → container
+exit          # leave container → Mac
+```
+
 
 **Learn:** `MY_TEAM` (Phase B) and `MY_TEAM_PQ` (Phase C) are **separate data sources** — same people may appear on two entities unless you designed them to cross-match. That's normal when simulating two ingestion paths.
 
@@ -501,12 +566,16 @@ SENZING_DATA_SOURCE=MY_TEAM_PQ \
 ./pipeline/run_my_team_pipeline.sh
 ```
 
-**Step 3 — Verify new record:**
+**Step 3 — Verify new record in sz_explorer**
+
+See [EXPLORER-SESSION.md](./EXPLORER-SESSION.md) — Mac → `sz_explorer` → `(szeda)`:
 
 ```
 get MY_TEAM_PQ E007
 quick_look
 ```
+
+Then `quit` and `exit`.
 
 > **Note:** Re-loading the full file may add duplicate records if E001–E006 were already loaded. Real production uses **incremental** files or **purge-by-source** strategies. For learning, that's OK — explore duplicate entities in `entity_size_breakdown`.
 
@@ -544,34 +613,112 @@ tail -20 staging/cron.log
 After any load batch, run this **analyst workflow**:
 
 ```bash
-# 1. Snapshot (if pipeline didn't)
+# 1. Snapshot (if pipeline didn't) — run on Mac
 source ./setup-env.sh
 docker run --rm -u $(id -u) -v ${PWD}:/data -w /data \
   -e SENZING_ENGINE_CONFIGURATION_JSON senzing/senzingsdk-tools \
   sz_snapshot -QAo truthset_snapshot
+```
 
-# 2. Explore
+**2. Explore in sz_explorer** — see [EXPLORER-SESSION.md](./EXPLORER-SESSION.md)
+
+**Step 1 — Mac terminal** (`➜ senzing-demo`):
+
+```bash
+cd ~/Dev/Tutorials/senzing-demo
+source ./setup-env.sh
+
 docker run --rm -it -v ${PWD}:/data -w /data \
   -e SENZING_ENGINE_CONFIGURATION_JSON senzing/senzingsdk-tools
 ```
 
+**Step 2 — Container** (`root@....:/data#`). Type:
+
 ```
 sz_explorer
+```
+
+**Step 3 — Explorer** (`(szeda)`). Type:
+
+```
 load truthset_snapshot.json
 data_source_summary              # new duplicates?
 cross_source_summary             # new watchlist hits?
 entity_size_breakdown            # over-matching?
 quick_look
-quit
 ```
 
-**Optional audit** when you have a truth key for a new source:
+**Step 4 — Exit:**
+
+```
+quit          # leave explorer → container
+exit          # leave container → Mac
+```
+
+
+**Optional audit** — compare Senzing’s snapshot to a **truth key** (expected entity groupings).
+
+The lab already includes truth keys for the **truth set** (not for `MY_TEAM`). Use these from [EDA-TUTORIAL Part 4](EDA-TUTORIAL.md):
 
 ```bash
+source ./setup-env.sh
+
+# vs definitive truth (expect ~100% F1)
 docker run --rm -u $(id -u) -v ${PWD}:/data -w /data \
   -e SENZING_ENGINE_CONFIGURATION_JSON senzing/senzingsdk-tools \
-  sz_audit -n truthset_snapshot.csv -p your_key.csv -o my_team_audit
+  sz_audit -n truthset_snapshot.csv -p actual_truthset_key.csv -o actual_audit
+
+# vs alternate key (expect ~97% F1 — MERGE/SPLIT cases to explore)
+docker run --rm -u $(id -u) -v ${PWD}:/data -w /data \
+  -e SENZING_ENGINE_CONFIGURATION_JSON senzing/senzingsdk-tools \
+  sz_audit -n truthset_snapshot.csv -p alternate_truthset_key.csv -o truthset_audit
 ```
+
+**Explore audit in sz_explorer:**
+
+**Step 1 — Mac terminal** (`➜ senzing-demo`):
+
+```bash
+cd ~/Dev/Tutorials/senzing-demo
+source ./setup-env.sh
+
+docker run --rm -it -v ${PWD}:/data -w /data \
+  -e SENZING_ENGINE_CONFIGURATION_JSON senzing/senzingsdk-tools
+```
+
+**Step 2 — Container** (`root@....:/data#`). Type:
+
+```
+sz_explorer
+```
+
+**Step 3 — Explorer** (`(szeda)`). Type:
+
+```
+load truthset_audit.json
+audit_summary
+```
+
+**Step 4 — Exit:**
+
+```
+quit          # leave explorer → container
+exit          # leave container → Mac
+```
+
+
+**Truth key format** (`actual_truthset_key.csv`):
+
+```text
+CLUSTER_ID,RECORD_ID,DATA_SOURCE
+2,1001,CUSTOMERS
+2,1002,CUSTOMERS
+...
+```
+
+Each `CLUSTER_ID` is the entity grouping you **expect**. Senzing’s snapshot is the **newer** result; the key is the **prior** expectation.
+
+> **MY_TEAM / MY_TEAM_PQ:** This repo does not ship a truth key for your employee CSV. For mapping exercises, use `get`, `how`, and `data_source_summary` instead. To audit `MY_TEAM`, you would create e.g. `learning/my_team_truth_key.csv` listing which `RECORD_ID`s should merge (E001+E002 → cluster 1, E003+E004 → cluster 2, etc.).
 
 ---
 

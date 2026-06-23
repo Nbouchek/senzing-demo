@@ -100,16 +100,22 @@ docker compose up -d
 source ./setup-env.sh
 ```
 
-**Enter tools container** (when a step says "container"):
+**Open sz_explorer** — see **[EXPLORER-SESSION.md](./EXPLORER-SESSION.md)** for the full 4-step recipe (Mac → container → `(szeda)` → exit).
+
+Quick version:
+
+**Step 1 — Mac:** `source ./setup-env.sh` then:
 
 ```bash
-docker run --rm -it \
-  -v ${PWD}:/data -w /data \
-  -e SENZING_ENGINE_CONFIGURATION_JSON \
-  senzing/senzingsdk-tools
+docker run --rm -it -v ${PWD}:/data -w /data \
+  -e SENZING_ENGINE_CONFIGURATION_JSON senzing/senzingsdk-tools
 ```
 
-Then type `sz_explorer` when a step says "explorer".
+**Step 2 — Container:** `sz_explorer` → prompt `(szeda)`
+
+**Step 3 — Explorer:** run the commands in each part below
+
+**Step 4 — Exit:** `quit` then `exit`
 
 ---
 
@@ -870,7 +876,13 @@ auditSummary split
 auditSummary split 1
 ```
 
-In explorer, drill into **SPLIT** from `audit_summary`.
+At **`(szeda)`** (see [EXPLORER-SESSION.md](./EXPLORER-SESSION.md) if not open yet):
+
+```
+audit_summary
+```
+
+Use **Enter** to drill into **SPLIT**.
 
 **Classic lab case — Darla / Darlene:**
 
