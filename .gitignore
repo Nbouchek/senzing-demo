@@ -1,0 +1,7 @@
+.env
+.env.*
+*.pyc
+__pycache__/
+.DS_Store
+staging/cron.log
+staging/cron_my_team.log

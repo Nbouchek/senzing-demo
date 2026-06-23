@@ -1,0 +1,2540 @@
+{
+    "SOURCE": "sz_snapshot",
+    "PROCESS": {
+        "STATUS": "Complete",
+        "START_TIME": "06/19/2026 11:57:00",
+        "LAST_ENTITY_ID": 1000000,
+        "END_DATE": "2026-06-19 11:57:04"
+    },
+    "TOTALS": {
+        "ENTITY_COUNT": 85,
+        "RECORD_COUNT": 159,
+        "MATCH": {
+            "ENTITY_COUNT": 85,
+            "RECORD_COUNT": 73,
+            "PRINCIPLES": {
+                "120: SF1_PNAME_CSTAB||+NAME+SSN": {
+                    "COUNT": 2,
+                    "SAMPLE": [
+                        3,
+                        49
+                    ]
+                },
+                "160: CNAME_CFF_CEXCL||+NAME+DOB+PHONE": {
+                    "COUNT": 3,
+                    "SAMPLE": [
+                        3,
+                        1,
+                        22
+                    ]
+                },
+                "160: CNAME_CFF_CEXCL||+NAME+DOB+ADDRESS": {
+                    "COUNT": 9,
+                    "SAMPLE": [
+                        3,
+                        4,
+                        1,
+                        20,
+                        24,
+                        59,
+                        61,
+                        63,
+                        105
+                    ]
+                },
+                "120: SF1_PNAME_CSTAB||+PNAME+DOB+SSN": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        4
+                    ]
+                },
+                "110: SF1_PNAME_CFF_CSTAB||+ADDRESS+SSN+EMAIL": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        7
+                    ]
+                },
+                "120: SF1_PNAME_CSTAB||+NAME+DOB+EMAIL": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        1
+                    ]
+                },
+                "130: SF1_CNAME||+NAME+DRLIC": {
+                    "COUNT": 2,
+                    "SAMPLE": [
+                        9,
+                        89
+                    ]
+                },
+                "180: SNAME_SSTAB||+NAME+DOB": {
+                    "COUNT": 5,
+                    "SAMPLE": [
+                        15,
+                        49,
+                        57,
+                        54,
+                        65
+                    ]
+                },
+                "122: SF1_PNAME_CFF||+NAME+ADDRESS+PASSPORT": {
+                    "COUNT": 3,
+                    "SAMPLE": [
+                        29,
+                        39,
+                        30
+                    ]
+                },
+                "130: SF1_CNAME||+NAME+EMAIL": {
+                    "COUNT": 3,
+                    "SAMPLE": [
+                        32,
+                        85,
+                        87
+                    ]
+                },
+                "120: SF1_PNAME_CSTAB||+NAME+DOB+PASSPORT": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        36
+                    ]
+                },
+                "130: SF1_CNAME||+NAME+PASSPORT": {
+                    "COUNT": 2,
+                    "SAMPLE": [
+                        36,
+                        49
+                    ]
+                },
+                "110: SF1_PNAME_CFF_CSTAB||+PNAME+DOB+ADDRESS+EMAIL": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        24
+                    ]
+                },
+                "120: SF1_PNAME_CSTAB||+PNAME+DOB+EMAIL": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        24
+                    ]
+                },
+                "162: CNAME_CFF||+NAME+PHONE": {
+                    "COUNT": 4,
+                    "SAMPLE": [
+                        45,
+                        47,
+                        95,
+                        99
+                    ]
+                },
+                "162: CNAME_CFF||+NAME+ADDRESS": {
+                    "COUNT": 10,
+                    "SAMPLE": [
+                        49,
+                        91,
+                        94,
+                        92,
+                        98,
+                        97,
+                        113,
+                        100006,
+                        200009,
+                        100017
+                    ]
+                },
+                "110: SF1_PNAME_CFF_CSTAB||+PNAME+DOB+ADDRESS+DRLIC": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        41
+                    ]
+                },
+                "108: SF1_SNAME_CFF_CSTAB||+NAME+DOB+ADDRESS+NATIONAL_ID": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        57
+                    ]
+                },
+                "131: CF1_PNAME_CFF_CSTAB||+NAME+DOB+ADDRESS+NATIONAL_ID": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        54
+                    ]
+                },
+                "110: SF1_PNAME_CFF_CSTAB||+NAME+DOB+PHONE+EMAIL": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        71
+                    ]
+                },
+                "110: SF1_PNAME_CFF_CSTAB||+NAME+DOB+ADDRESS+PASSPORT": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        69
+                    ]
+                },
+                "108: SF1_SNAME_CFF_CSTAB||+NAME+DOB+ADDRESS+PASSPORT": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        67
+                    ]
+                },
+                "108: SF1_SNAME_CFF_CSTAB||+NAME+DOB+PHONE+EMAIL": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        77
+                    ]
+                },
+                "120: SF1_PNAME_CSTAB||+PNAME+DOB+DRLIC": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        79
+                    ]
+                },
+                "151: MFF_LNAME_CEXCL||+LIKELY_NAME+ADDRESS+PHONE": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        96
+                    ]
+                },
+                "152: MFF_CNAME||+NAME+ADDRESS+PHONE": {
+                    "COUNT": 2,
+                    "SAMPLE": [
+                        95,
+                        100013
+                    ]
+                },
+                "120: SF1_PNAME_CSTAB||+NAME+DOB+DRLIC": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        81
+                    ]
+                },
+                "111: SF1_SNAME_CFF_CSTAB_DEXCL||+NAME+DOB+PHONE+EMAIL-GENDER": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        73
+                    ]
+                },
+                "122: SF1_PNAME_CFF||+NAME+ADDRESS+EMAIL": {
+                    "COUNT": 2,
+                    "SAMPLE": [
+                        83,
+                        100021
+                    ]
+                },
+                "162: CNAME_CFF||+NAME+EMPLOYER": {
+                    "COUNT": 2,
+                    "SAMPLE": [
+                        100011,
+                        100009
+                    ]
+                },
+                "122: SF1_PNAME_CFF||+PNAME+PHONE+EMAIL": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        100003
+                    ]
+                },
+                "130: SF1_CNAME||+NAME+PHONE": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        100015
+                    ]
+                }
+            }
+        },
+        "AMBIGUOUS_MATCH": {
+            "RELATION_COUNT": 2,
+            "PRINCIPLES": {
+                "162: CNAME_CFF||+NAME+ADDRESS (Ambiguous)": {
+                    "COUNT": 2,
+                    "SAMPLE": [
+                        "28 200009",
+                        "27 200009"
+                    ]
+                }
+            }
+        },
+        "POSSIBLE_MATCH": {
+            "RELATION_COUNT": 13,
+            "PRINCIPLES": {
+                "164: CNAME_CFF_DEXCL||+NAME+ADDRESS-GENERATION": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        "19 200012"
+                    ]
+                },
+                "164: CNAME_CFF_DEXCL||+NAME+ADDRESS-DOB": {
+                    "COUNT": 2,
+                    "SAMPLE": [
+                        "1 9",
+                        "27 28"
+                    ]
+                },
+                "203: SNAME||+NAME": {
+                    "COUNT": 5,
+                    "SAMPLE": [
+                        "1 200001",
+                        "9 200001",
+                        "29 200004",
+                        "30 200004",
+                        "100 101"
+                    ]
+                },
+                "185: CNAME_CSTAB||+NAME+DOB": {
+                    "COUNT": 2,
+                    "SAMPLE": [
+                        "17 18",
+                        "17 200010"
+                    ]
+                },
+                "164: CNAME_CFF_DEXCL||+NAME+ADDRESS-DOB-PASSPORT": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        "29 30"
+                    ]
+                },
+                "185: CNAME_CSTAB||+NAME+DOB-GENERATION": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        "75 76"
+                    ]
+                },
+                "206: CNAME||+NAME": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        "43 44"
+                    ]
+                }
+            }
+        },
+        "POSSIBLE_RELATION": {
+            "RELATION_COUNT": 38,
+            "PRINCIPLES": {
+                "195: SF1||+SURNAME+ADDRESS+EMAIL-DOB-SSN": {
+                    "COUNT": 3,
+                    "SAMPLE": [
+                        "3 4",
+                        "3 7",
+                        "4 7"
+                    ]
+                },
+                "195: SF1||+PNAME+ADDRESS+EMAIL-DOB": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        "3 8"
+                    ]
+                },
+                "195: SF1||+SURNAME+ADDRESS+EMAIL-DOB": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        "4 8"
+                    ]
+                },
+                "195: SF1||+SURNAME+DOB+ADDRESS+EMAIL": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        "7 8"
+                    ]
+                },
+                "199: CFF_SURNAME||+SURNAME+ADDRESS": {
+                    "COUNT": 4,
+                    "SAMPLE": [
+                        "1 200004",
+                        "29 200009",
+                        "39 41",
+                        "30 200009"
+                    ]
+                },
+                "199: CFF_SURNAME||+SURNAME+ADDRESS-DOB": {
+                    "COUNT": 3,
+                    "SAMPLE": [
+                        "28 29",
+                        "27 30",
+                        "104 105"
+                    ]
+                },
+                "199: CFF_SURNAME||+SURNAME+DOB+ADDRESS": {
+                    "COUNT": 2,
+                    "SAMPLE": [
+                        "28 30",
+                        "27 29"
+                    ]
+                },
+                "202: SFF||+ADDRESS-DOB": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        "24 49"
+                    ]
+                },
+                "202: SFF||+PNAME+PHONE-DOB": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        "71 77"
+                    ]
+                },
+                "202: SFF||+EMPLOYER": {
+                    "COUNT": 12,
+                    "SAMPLE": [
+                        "95 100013",
+                        "100006 100015",
+                        "100006 100017",
+                        "100006 100021",
+                        "100009 100011",
+                        "100003 100006",
+                        "100003 100015",
+                        "100003 100017",
+                        "100003 100021",
+                        "100017 100021",
+                        "100015 100017",
+                        "100015 100021"
+                    ]
+                },
+                "199: CFF_SURNAME||+SURNAME+PHONE": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        "102 103"
+                    ]
+                },
+                "202: SFF||+ADDRESS": {
+                    "COUNT": 6,
+                    "SAMPLE": [
+                        "112 116",
+                        "113 117",
+                        "107 114",
+                        "109 115",
+                        "109 120",
+                        "115 120"
+                    ]
+                },
+                "204: CFF||+ADDRESS": {
+                    "COUNT": 2,
+                    "SAMPLE": [
+                        "113 118",
+                        "117 118"
+                    ]
+                }
+            }
+        },
+        "DISCLOSED_RELATION": {
+            "RELATION_COUNT": 14,
+            "PRINCIPLES": {
+                "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:OWNS 40%|MAX:)": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        "57 92"
+                    ]
+                },
+                "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:OWNS 60%|MAX:)": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        "54 92"
+                    ]
+                },
+                "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:OWNS 100%)": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        "94 95"
+                    ]
+                },
+                "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:PRESIDENT)": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        "94 100013"
+                    ]
+                },
+                "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:GLOBAL PARENT|MAX:)": {
+                    "COUNT": 1,
+                    "SAMPLE": [
+                        "96 97"
+                    ]
+                },
+                "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:PRINCIPAL)": {
+                    "COUNT": 5,
+                    "SAMPLE": [
+                        "96 100003",
+                        "96 100006",
+                        "96 100015",
+                        "96 100017",
+                        "96 100021"
+                    ]
+                },
+                "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:GLOBAL PARENT)": {
+                    "COUNT": 2,
+                    "SAMPLE": [
+                        "97 98",
+                        "97 99"
+                    ]
+                },
+                "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:OWNS 50%)": {
+                    "COUNT": 2,
+                    "SAMPLE": [
+                        "97 100009",
+                        "97 100011"
+                    ]
+                }
+            }
+        }
+    },
+    "DATA_SOURCES": {
+        "CUSTOMERS": {
+            "MATCH": {
+                "ENTITY_COUNT": 36,
+                "RECORD_COUNT": 84,
+                "PRINCIPLES": {
+                    "multiple||multiple": {
+                        "COUNT": 4,
+                        "SAMPLE": [
+                            3,
+                            1,
+                            36,
+                            49
+                        ]
+                    },
+                    "160: CNAME_CFF_CEXCL||+NAME+DOB+ADDRESS": {
+                        "COUNT": 7,
+                        "SAMPLE": [
+                            4,
+                            20,
+                            24,
+                            59,
+                            61,
+                            63,
+                            105
+                        ]
+                    },
+                    "180: SNAME_SSTAB||+NAME+DOB": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            15,
+                            65
+                        ]
+                    },
+                    "160: CNAME_CFF_CEXCL||+NAME+DOB+PHONE": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            22
+                        ]
+                    },
+                    "122: SF1_PNAME_CFF||+NAME+ADDRESS+PASSPORT": {
+                        "COUNT": 3,
+                        "SAMPLE": [
+                            29,
+                            39,
+                            30
+                        ]
+                    },
+                    "130: SF1_CNAME||+NAME+EMAIL": {
+                        "COUNT": 3,
+                        "SAMPLE": [
+                            32,
+                            85,
+                            87
+                        ]
+                    },
+                    "162: CNAME_CFF||+NAME+PHONE": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            45,
+                            47
+                        ]
+                    },
+                    "110: SF1_PNAME_CFF_CSTAB||+PNAME+DOB+ADDRESS+DRLIC": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            41
+                        ]
+                    },
+                    "108: SF1_SNAME_CFF_CSTAB||+NAME+DOB+ADDRESS+NATIONAL_ID": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            57
+                        ]
+                    },
+                    "131: CF1_PNAME_CFF_CSTAB||+NAME+DOB+ADDRESS+NATIONAL_ID": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            54
+                        ]
+                    },
+                    "110: SF1_PNAME_CFF_CSTAB||+NAME+DOB+PHONE+EMAIL": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            71
+                        ]
+                    },
+                    "110: SF1_PNAME_CFF_CSTAB||+NAME+DOB+ADDRESS+PASSPORT": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            69
+                        ]
+                    },
+                    "108: SF1_SNAME_CFF_CSTAB||+NAME+DOB+ADDRESS+PASSPORT": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            67
+                        ]
+                    },
+                    "162: CNAME_CFF||+NAME+ADDRESS": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            91,
+                            113
+                        ]
+                    },
+                    "130: SF1_CNAME||+NAME+DRLIC": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            89
+                        ]
+                    },
+                    "108: SF1_SNAME_CFF_CSTAB||+NAME+DOB+PHONE+EMAIL": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            77
+                        ]
+                    },
+                    "120: SF1_PNAME_CSTAB||+PNAME+DOB+DRLIC": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            79
+                        ]
+                    },
+                    "120: SF1_PNAME_CSTAB||+NAME+DOB+DRLIC": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            81
+                        ]
+                    },
+                    "111: SF1_SNAME_CFF_CSTAB_DEXCL||+NAME+DOB+PHONE+EMAIL-GENDER": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            73
+                        ]
+                    },
+                    "122: SF1_PNAME_CFF||+NAME+ADDRESS+EMAIL": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            83
+                        ]
+                    }
+                }
+            },
+            "AMBIGUOUS_MATCH": {
+                "RELATION_COUNT": 0
+            },
+            "POSSIBLE_MATCH": {
+                "RELATION_COUNT": 7,
+                "PRINCIPLES": {
+                    "164: CNAME_CFF_DEXCL||+NAME+ADDRESS-DOB": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "1 9",
+                            "27 28"
+                        ]
+                    },
+                    "185: CNAME_CSTAB||+NAME+DOB": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "17 18"
+                        ]
+                    },
+                    "164: CNAME_CFF_DEXCL||+NAME+ADDRESS-DOB-PASSPORT": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "29 30"
+                        ]
+                    },
+                    "185: CNAME_CSTAB||+NAME+DOB-GENERATION": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "75 76"
+                        ]
+                    },
+                    "206: CNAME||+NAME": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "43 44"
+                        ]
+                    },
+                    "203: SNAME||+NAME": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "100 101"
+                        ]
+                    }
+                }
+            },
+            "POSSIBLE_RELATION": {
+                "RELATION_COUNT": 23,
+                "PRINCIPLES": {
+                    "195: SF1||+SURNAME+ADDRESS+EMAIL-DOB-SSN": {
+                        "COUNT": 3,
+                        "SAMPLE": [
+                            "3 4",
+                            "3 7",
+                            "4 7"
+                        ]
+                    },
+                    "195: SF1||+PNAME+ADDRESS+EMAIL-DOB": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "3 8"
+                        ]
+                    },
+                    "195: SF1||+SURNAME+ADDRESS+EMAIL-DOB": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "4 8"
+                        ]
+                    },
+                    "195: SF1||+SURNAME+DOB+ADDRESS+EMAIL": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "7 8"
+                        ]
+                    },
+                    "199: CFF_SURNAME||+SURNAME+ADDRESS-DOB": {
+                        "COUNT": 3,
+                        "SAMPLE": [
+                            "28 29",
+                            "27 30",
+                            "104 105"
+                        ]
+                    },
+                    "199: CFF_SURNAME||+SURNAME+DOB+ADDRESS": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "28 30",
+                            "27 29"
+                        ]
+                    },
+                    "199: CFF_SURNAME||+SURNAME+ADDRESS": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "39 41"
+                        ]
+                    },
+                    "202: SFF||+ADDRESS-DOB": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "24 49"
+                        ]
+                    },
+                    "202: SFF||+PNAME+PHONE-DOB": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "71 77"
+                        ]
+                    },
+                    "199: CFF_SURNAME||+SURNAME+PHONE": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "102 103"
+                        ]
+                    },
+                    "202: SFF||+ADDRESS": {
+                        "COUNT": 6,
+                        "SAMPLE": [
+                            "112 116",
+                            "113 117",
+                            "107 114",
+                            "109 115",
+                            "109 120",
+                            "115 120"
+                        ]
+                    },
+                    "204: CFF||+ADDRESS": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "113 118",
+                            "117 118"
+                        ]
+                    }
+                }
+            },
+            "DISCLOSED_RELATION": {
+                "RELATION_COUNT": 6,
+                "PRINCIPLES": {
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:OWNS 40%|MAX:)": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "57 92"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:OWNS 60%|MAX:)": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "54 92"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:OWNS 100%)": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "94 95"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:GLOBAL PARENT|MAX:)": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "96 97"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:GLOBAL PARENT)": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "97 98",
+                            "97 99"
+                        ]
+                    }
+                }
+            },
+            "ENTITY_COUNT": 72,
+            "RECORD_COUNT": 120
+        },
+        "WATCHLIST": {
+            "MATCH": {
+                "ENTITY_COUNT": 3,
+                "RECORD_COUNT": 6,
+                "PRINCIPLES": {
+                    "multiple||multiple": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            4,
+                            24
+                        ]
+                    },
+                    "162: CNAME_CFF||+NAME+ADDRESS": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            200009
+                        ]
+                    }
+                }
+            },
+            "AMBIGUOUS_MATCH": {
+                "RELATION_COUNT": 0
+            },
+            "POSSIBLE_MATCH": {
+                "RELATION_COUNT": 1,
+                "PRINCIPLES": {
+                    "203: SNAME||+NAME": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "9 200001"
+                        ]
+                    }
+                }
+            },
+            "POSSIBLE_RELATION": {
+                "RELATION_COUNT": 3,
+                "PRINCIPLES": {
+                    "195: SF1||+SURNAME+ADDRESS+EMAIL-DOB-SSN": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "4 7"
+                        ]
+                    },
+                    "202: SFF||+EMPLOYER": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "95 100013",
+                            "100009 100011"
+                        ]
+                    }
+                }
+            },
+            "DISCLOSED_RELATION": {
+                "RELATION_COUNT": 0
+            },
+            "ENTITY_COUNT": 14,
+            "RECORD_COUNT": 17
+        },
+        "REFERENCE": {
+            "MATCH": {
+                "ENTITY_COUNT": 5,
+                "RECORD_COUNT": 10,
+                "PRINCIPLES": {
+                    "162: CNAME_CFF||+NAME+ADDRESS": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            100006,
+                            100017
+                        ]
+                    },
+                    "122: SF1_PNAME_CFF||+PNAME+PHONE+EMAIL": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            100003
+                        ]
+                    },
+                    "122: SF1_PNAME_CFF||+NAME+ADDRESS+EMAIL": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            100021
+                        ]
+                    },
+                    "130: SF1_CNAME||+NAME+PHONE": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            100015
+                        ]
+                    }
+                }
+            },
+            "AMBIGUOUS_MATCH": {
+                "RELATION_COUNT": 0
+            },
+            "POSSIBLE_MATCH": {
+                "RELATION_COUNT": 0
+            },
+            "POSSIBLE_RELATION": {
+                "RELATION_COUNT": 12,
+                "PRINCIPLES": {
+                    "202: SFF||+EMPLOYER": {
+                        "COUNT": 12,
+                        "SAMPLE": [
+                            "95 100013",
+                            "100006 100015",
+                            "100006 100017",
+                            "100006 100021",
+                            "100009 100011",
+                            "100003 100006",
+                            "100003 100015",
+                            "100003 100017",
+                            "100003 100021",
+                            "100017 100021",
+                            "100015 100017",
+                            "100015 100021"
+                        ]
+                    }
+                }
+            },
+            "DISCLOSED_RELATION": {
+                "RELATION_COUNT": 14,
+                "PRINCIPLES": {
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:OWNS 40%|MAX:)": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "57 92"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:OWNS 60%|MAX:)": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "54 92"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:OWNS 100%)": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "94 95"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:PRESIDENT)": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "94 100013"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:GLOBAL PARENT|MAX:)": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "96 97"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:PRINCIPAL)": {
+                        "COUNT": 5,
+                        "SAMPLE": [
+                            "96 100003",
+                            "96 100006",
+                            "96 100015",
+                            "96 100017",
+                            "96 100021"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:GLOBAL PARENT)": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "97 98",
+                            "97 99"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:OWNS 50%)": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "97 100009",
+                            "97 100011"
+                        ]
+                    }
+                }
+            },
+            "ENTITY_COUNT": 17,
+            "RECORD_COUNT": 22
+        }
+    },
+    "CROSS_SOURCES": {
+        "CUSTOMERS||WATCHLIST": {
+            "MATCH": {
+                "ENTITY_COUNT": 6,
+                "RECORD_COUNT": 11,
+                "PRINCIPLES": {
+                    "multiple||multiple": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            4,
+                            24
+                        ]
+                    },
+                    "110: SF1_PNAME_CFF_CSTAB||+ADDRESS+SSN+EMAIL": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            7
+                        ]
+                    },
+                    "130: SF1_CNAME||+NAME+DRLIC": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            9
+                        ]
+                    },
+                    "180: SNAME_SSTAB||+NAME+DOB": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            15
+                        ]
+                    },
+                    "152: MFF_CNAME||+NAME+ADDRESS+PHONE": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            95
+                        ]
+                    }
+                }
+            },
+            "AMBIGUOUS_MATCH": {
+                "RELATION_COUNT": 2,
+                "PRINCIPLES": {
+                    "162: CNAME_CFF||+NAME+ADDRESS (Ambiguous)": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "28 200009",
+                            "27 200009"
+                        ]
+                    }
+                }
+            },
+            "POSSIBLE_MATCH": {
+                "RELATION_COUNT": 7,
+                "PRINCIPLES": {
+                    "164: CNAME_CFF_DEXCL||+NAME+ADDRESS-GENERATION": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "19 200012"
+                        ]
+                    },
+                    "164: CNAME_CFF_DEXCL||+NAME+ADDRESS-DOB": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "1 9"
+                        ]
+                    },
+                    "203: SNAME||+NAME": {
+                        "COUNT": 4,
+                        "SAMPLE": [
+                            "1 200001",
+                            "9 200001",
+                            "29 200004",
+                            "30 200004"
+                        ]
+                    },
+                    "185: CNAME_CSTAB||+NAME+DOB": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "17 200010"
+                        ]
+                    }
+                }
+            },
+            "POSSIBLE_RELATION": {
+                "RELATION_COUNT": 11,
+                "PRINCIPLES": {
+                    "195: SF1||+SURNAME+ADDRESS+EMAIL-DOB-SSN": {
+                        "COUNT": 4,
+                        "SAMPLE": [
+                            "3 4",
+                            "3 7",
+                            "4 7",
+                            "4 7"
+                        ]
+                    },
+                    "195: SF1||+SURNAME+ADDRESS+EMAIL-DOB": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "4 8"
+                        ]
+                    },
+                    "195: SF1||+SURNAME+DOB+ADDRESS+EMAIL": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "7 8"
+                        ]
+                    },
+                    "199: CFF_SURNAME||+SURNAME+ADDRESS": {
+                        "COUNT": 3,
+                        "SAMPLE": [
+                            "1 200004",
+                            "29 200009",
+                            "30 200009"
+                        ]
+                    },
+                    "202: SFF||+ADDRESS-DOB": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "24 49"
+                        ]
+                    },
+                    "202: SFF||+EMPLOYER": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "95 100013"
+                        ]
+                    }
+                }
+            },
+            "DISCLOSED_RELATION": {
+                "RELATION_COUNT": 4,
+                "PRINCIPLES": {
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:OWNS 100%)": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "94 95"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:PRESIDENT)": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "94 100013"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:OWNS 50%)": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "97 100009",
+                            "97 100011"
+                        ]
+                    }
+                }
+            }
+        },
+        "WATCHLIST||CUSTOMERS": {
+            "MATCH": {
+                "ENTITY_COUNT": 6,
+                "RECORD_COUNT": 8,
+                "PRINCIPLES": {
+                    "160: CNAME_CFF_CEXCL||+NAME+DOB+ADDRESS": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            4,
+                            24
+                        ]
+                    },
+                    "110: SF1_PNAME_CFF_CSTAB||+ADDRESS+SSN+EMAIL": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            7
+                        ]
+                    },
+                    "130: SF1_CNAME||+NAME+DRLIC": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            9
+                        ]
+                    },
+                    "180: SNAME_SSTAB||+NAME+DOB": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            15
+                        ]
+                    },
+                    "162: CNAME_CFF||+NAME+PHONE": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            95
+                        ]
+                    }
+                }
+            },
+            "AMBIGUOUS_MATCH": {
+                "RELATION_COUNT": 2,
+                "PRINCIPLES": {
+                    "162: CNAME_CFF||+NAME+ADDRESS (Ambiguous)": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "28 200009",
+                            "27 200009"
+                        ]
+                    }
+                }
+            },
+            "POSSIBLE_MATCH": {
+                "RELATION_COUNT": 7,
+                "PRINCIPLES": {
+                    "164: CNAME_CFF_DEXCL||+NAME+ADDRESS-GENERATION": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "19 200012"
+                        ]
+                    },
+                    "164: CNAME_CFF_DEXCL||+NAME+ADDRESS-DOB": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "1 9"
+                        ]
+                    },
+                    "203: SNAME||+NAME": {
+                        "COUNT": 4,
+                        "SAMPLE": [
+                            "1 200001",
+                            "9 200001",
+                            "29 200004",
+                            "30 200004"
+                        ]
+                    },
+                    "185: CNAME_CSTAB||+NAME+DOB": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "17 200010"
+                        ]
+                    }
+                }
+            },
+            "POSSIBLE_RELATION": {
+                "RELATION_COUNT": 11,
+                "PRINCIPLES": {
+                    "195: SF1||+SURNAME+ADDRESS+EMAIL-DOB-SSN": {
+                        "COUNT": 4,
+                        "SAMPLE": [
+                            "3 4",
+                            "3 7",
+                            "4 7",
+                            "4 7"
+                        ]
+                    },
+                    "195: SF1||+SURNAME+ADDRESS+EMAIL-DOB": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "4 8"
+                        ]
+                    },
+                    "195: SF1||+SURNAME+DOB+ADDRESS+EMAIL": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "7 8"
+                        ]
+                    },
+                    "199: CFF_SURNAME||+SURNAME+ADDRESS": {
+                        "COUNT": 3,
+                        "SAMPLE": [
+                            "1 200004",
+                            "29 200009",
+                            "30 200009"
+                        ]
+                    },
+                    "202: SFF||+ADDRESS-DOB": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "24 49"
+                        ]
+                    },
+                    "202: SFF||+EMPLOYER": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "95 100013"
+                        ]
+                    }
+                }
+            },
+            "DISCLOSED_RELATION": {
+                "RELATION_COUNT": 4,
+                "PRINCIPLES": {
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:OWNS 100%)": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "94 95"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:PRESIDENT)": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "94 100013"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:OWNS 50%)": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "97 100009",
+                            "97 100011"
+                        ]
+                    }
+                }
+            }
+        },
+        "CUSTOMERS||REFERENCE": {
+            "MATCH": {
+                "ENTITY_COUNT": 9,
+                "RECORD_COUNT": 11,
+                "PRINCIPLES": {
+                    "180: SNAME_SSTAB||+NAME+DOB": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            57,
+                            54
+                        ]
+                    },
+                    "162: CNAME_CFF||+NAME+ADDRESS": {
+                        "COUNT": 4,
+                        "SAMPLE": [
+                            94,
+                            92,
+                            98,
+                            97
+                        ]
+                    },
+                    "151: MFF_LNAME_CEXCL||+LIKELY_NAME+ADDRESS+PHONE": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            96
+                        ]
+                    },
+                    "162: CNAME_CFF||+NAME+PHONE": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            95,
+                            99
+                        ]
+                    }
+                }
+            },
+            "AMBIGUOUS_MATCH": {
+                "RELATION_COUNT": 0
+            },
+            "POSSIBLE_MATCH": {
+                "RELATION_COUNT": 0
+            },
+            "POSSIBLE_RELATION": {
+                "RELATION_COUNT": 1,
+                "PRINCIPLES": {
+                    "202: SFF||+EMPLOYER": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "95 100013"
+                        ]
+                    }
+                }
+            },
+            "DISCLOSED_RELATION": {
+                "RELATION_COUNT": 20,
+                "PRINCIPLES": {
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:OWNS 40%|MAX:)": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "57 92",
+                            "57 92"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:OWNS 60%|MAX:)": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "54 92",
+                            "54 92"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:OWNS 100%)": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "94 95",
+                            "94 95"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:PRESIDENT)": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "94 100013"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:GLOBAL PARENT|MAX:)": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "96 97",
+                            "96 97"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:PRINCIPAL)": {
+                        "COUNT": 5,
+                        "SAMPLE": [
+                            "96 100003",
+                            "96 100006",
+                            "96 100015",
+                            "96 100017",
+                            "96 100021"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:GLOBAL PARENT)": {
+                        "COUNT": 4,
+                        "SAMPLE": [
+                            "97 98",
+                            "97 98",
+                            "97 99",
+                            "97 99"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:OWNS 50%)": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "97 100009",
+                            "97 100011"
+                        ]
+                    }
+                }
+            }
+        },
+        "REFERENCE||CUSTOMERS": {
+            "MATCH": {
+                "ENTITY_COUNT": 9,
+                "RECORD_COUNT": 9,
+                "PRINCIPLES": {
+                    "108: SF1_SNAME_CFF_CSTAB||+NAME+DOB+ADDRESS+NATIONAL_ID": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            57
+                        ]
+                    },
+                    "131: CF1_PNAME_CFF_CSTAB||+NAME+DOB+ADDRESS+NATIONAL_ID": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            54
+                        ]
+                    },
+                    "162: CNAME_CFF||+NAME+ADDRESS": {
+                        "COUNT": 4,
+                        "SAMPLE": [
+                            94,
+                            92,
+                            98,
+                            97
+                        ]
+                    },
+                    "151: MFF_LNAME_CEXCL||+LIKELY_NAME+ADDRESS+PHONE": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            96
+                        ]
+                    },
+                    "162: CNAME_CFF||+NAME+PHONE": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            95,
+                            99
+                        ]
+                    }
+                }
+            },
+            "AMBIGUOUS_MATCH": {
+                "RELATION_COUNT": 0
+            },
+            "POSSIBLE_MATCH": {
+                "RELATION_COUNT": 0
+            },
+            "POSSIBLE_RELATION": {
+                "RELATION_COUNT": 1,
+                "PRINCIPLES": {
+                    "202: SFF||+EMPLOYER": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "95 100013"
+                        ]
+                    }
+                }
+            },
+            "DISCLOSED_RELATION": {
+                "RELATION_COUNT": 20,
+                "PRINCIPLES": {
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:OWNS 40%|MAX:)": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "57 92",
+                            "57 92"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:OWNS 60%|MAX:)": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "54 92",
+                            "54 92"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:OWNS 100%)": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "94 95",
+                            "94 95"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:PRESIDENT)": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "94 100013"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:GLOBAL PARENT|MAX:)": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "96 97",
+                            "96 97"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:PRINCIPAL)": {
+                        "COUNT": 5,
+                        "SAMPLE": [
+                            "96 100003",
+                            "96 100006",
+                            "96 100015",
+                            "96 100017",
+                            "96 100021"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:GLOBAL PARENT)": {
+                        "COUNT": 4,
+                        "SAMPLE": [
+                            "97 98",
+                            "97 98",
+                            "97 99",
+                            "97 99"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:OWNS 50%)": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "97 100009",
+                            "97 100011"
+                        ]
+                    }
+                }
+            }
+        },
+        "REFERENCE||WATCHLIST": {
+            "MATCH": {
+                "ENTITY_COUNT": 4,
+                "RECORD_COUNT": 4,
+                "PRINCIPLES": {
+                    "152: MFF_CNAME||+NAME+ADDRESS+PHONE": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            95,
+                            100013
+                        ]
+                    },
+                    "162: CNAME_CFF||+NAME+EMPLOYER": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            100011,
+                            100009
+                        ]
+                    }
+                }
+            },
+            "AMBIGUOUS_MATCH": {
+                "RELATION_COUNT": 0
+            },
+            "POSSIBLE_MATCH": {
+                "RELATION_COUNT": 0
+            },
+            "POSSIBLE_RELATION": {
+                "RELATION_COUNT": 4,
+                "PRINCIPLES": {
+                    "202: SFF||+EMPLOYER": {
+                        "COUNT": 4,
+                        "SAMPLE": [
+                            "95 100013",
+                            "95 100013",
+                            "100009 100011",
+                            "100009 100011"
+                        ]
+                    }
+                }
+            },
+            "DISCLOSED_RELATION": {
+                "RELATION_COUNT": 4,
+                "PRINCIPLES": {
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:OWNS 100%)": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "94 95"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:PRESIDENT)": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "94 100013"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:OWNS 50%)": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "97 100009",
+                            "97 100011"
+                        ]
+                    }
+                }
+            }
+        },
+        "WATCHLIST||REFERENCE": {
+            "MATCH": {
+                "ENTITY_COUNT": 4,
+                "RECORD_COUNT": 4,
+                "PRINCIPLES": {
+                    "152: MFF_CNAME||+NAME+ADDRESS+PHONE": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            95,
+                            100013
+                        ]
+                    },
+                    "162: CNAME_CFF||+NAME+EMPLOYER": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            100011,
+                            100009
+                        ]
+                    }
+                }
+            },
+            "AMBIGUOUS_MATCH": {
+                "RELATION_COUNT": 0
+            },
+            "POSSIBLE_MATCH": {
+                "RELATION_COUNT": 0
+            },
+            "POSSIBLE_RELATION": {
+                "RELATION_COUNT": 4,
+                "PRINCIPLES": {
+                    "202: SFF||+EMPLOYER": {
+                        "COUNT": 4,
+                        "SAMPLE": [
+                            "95 100013",
+                            "95 100013",
+                            "100009 100011",
+                            "100009 100011"
+                        ]
+                    }
+                }
+            },
+            "DISCLOSED_RELATION": {
+                "RELATION_COUNT": 4,
+                "PRINCIPLES": {
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:OWNS 100%)": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "94 95"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:PRESIDENT)": {
+                        "COUNT": 1,
+                        "SAMPLE": [
+                            "94 100013"
+                        ]
+                    },
+                    "DISCLOSURE||+REL_POINTER(DOMAIN:REFERENCE|MIN:|MAX:OWNS 50%)": {
+                        "COUNT": 2,
+                        "SAMPLE": [
+                            "97 100009",
+                            "97 100011"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "ENTITY_SOURCES": {
+        "CUSTOMERS": {
+            "ENTITY_COUNT": 58,
+            "SAMPLE": [
+                8,
+                3,
+                18,
+                19,
+                1,
+                28,
+                27,
+                20,
+                17,
+                22,
+                29,
+                39,
+                32,
+                44,
+                36,
+                45,
+                49,
+                30,
+                41,
+                47,
+                59,
+                61,
+                65,
+                63,
+                71,
+                69,
+                67,
+                76,
+                75,
+                91,
+                89,
+                85,
+                43,
+                77,
+                79,
+                87,
+                81,
+                73,
+                100,
+                104,
+                102,
+                101,
+                103,
+                108,
+                110,
+                112,
+                111,
+                114,
+                113,
+                107,
+                83,
+                105,
+                117,
+                109,
+                116,
+                118,
+                115,
+                120
+            ]
+        },
+        "CUSTOMERS||WATCHLIST": {
+            "ENTITY_COUNT": 5,
+            "SAMPLE": [
+                4,
+                7,
+                9,
+                15,
+                24
+            ]
+        },
+        "CUSTOMERS||REFERENCE": {
+            "ENTITY_COUNT": 8,
+            "SAMPLE": [
+                57,
+                54,
+                94,
+                92,
+                96,
+                98,
+                99,
+                97
+            ]
+        },
+        "CUSTOMERS||REFERENCE||WATCHLIST": {
+            "ENTITY_COUNT": 1,
+            "SAMPLE": [
+                95
+            ]
+        },
+        "REFERENCE": {
+            "ENTITY_COUNT": 5,
+            "SAMPLE": [
+                100006,
+                100003,
+                100021,
+                100017,
+                100015
+            ]
+        },
+        "REFERENCE||WATCHLIST": {
+            "ENTITY_COUNT": 3,
+            "SAMPLE": [
+                100011,
+                100009,
+                100013
+            ]
+        },
+        "WATCHLIST": {
+            "ENTITY_COUNT": 5,
+            "SAMPLE": [
+                200010,
+                200004,
+                200012,
+                200009,
+                200001
+            ]
+        }
+    },
+    "ENTITY_SIZES": {
+        "1": {
+            "COUNT": 31,
+            "SAMPLE": [
+                {
+                    "27": {
+                        "ADDRESS": 1,
+                        "DOB": 1,
+                        "GENDER": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "19": {
+                        "ADDRESS": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "44": {
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "17": {
+                        "DOB": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "101": {
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "75": {
+                        "DOB": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "43": {
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "28": {
+                        "ADDRESS": 1,
+                        "DOB": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "8": {
+                        "ADDRESS": 1,
+                        "DOB": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "76": {
+                        "DOB": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "18": {
+                        "DOB": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "107": {
+                        "ADDRESS": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "114": {
+                        "ADDRESS": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "111": {
+                        "ADDRESS": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "108": {
+                        "ADDRESS": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "112": {
+                        "ADDRESS": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "117": {
+                        "ADDRESS": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "110": {
+                        "ADDRESS": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "116": {
+                        "ADDRESS": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "109": {
+                        "ADDRESS": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "103": {
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "PHONE": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "100": {
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "102": {
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "PHONE": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "118": {
+                        "ADDRESS": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "200012": {
+                        "ADDRESS": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "200001": {
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "200004": {
+                        "ADDRESS": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "120": {
+                        "ADDRESS": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "115": {
+                        "ADDRESS": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "200010": {
+                        "DOB": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "104": {
+                        "ADDRESS": 1,
+                        "DOB": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                }
+            ]
+        },
+        "4": {
+            "COUNT": 2,
+            "SAMPLE": [
+                {
+                    "3": {
+                        "ADDRESS": 1,
+                        "DOB": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "PHONE": 1,
+                        "RECORD_TYPE": 1,
+                        "SSN": 1
+                    }
+                },
+                {
+                    "1": {
+                        "ADDRESS": 2,
+                        "DOB": 2,
+                        "EMAIL": 1,
+                        "NAME": 2,
+                        "PHONE": 2,
+                        "RECORD_TYPE": 1
+                    }
+                }
+            ]
+        },
+        "5": {
+            "COUNT": 2,
+            "SAMPLE": [
+                {
+                    "4": {
+                        "ADDRESS": 3,
+                        "DOB": 1,
+                        "EMAIL": 1,
+                        "NAME": 2,
+                        "RECORD_TYPE": 1,
+                        "SSN": 1
+                    }
+                },
+                {
+                    "24": {
+                        "ADDRESS": 2,
+                        "DOB": 2,
+                        "EMAIL": 1,
+                        "NAME": 3,
+                        "RECORD_TYPE": 1
+                    }
+                }
+            ]
+        },
+        "2": {
+            "COUNT": 43,
+            "SAMPLE": [
+                {
+                    "7": {
+                        "ADDRESS": 1,
+                        "DOB": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1,
+                        "SSN": 1
+                    }
+                },
+                {
+                    "47": {
+                        "NAME": 1,
+                        "PHONE": 2,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "20": {
+                        "ADDRESS": 2,
+                        "DOB": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "59": {
+                        "ADDRESS": 1,
+                        "DOB": 1,
+                        "GENDER": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "61": {
+                        "ADDRESS": 1,
+                        "DOB": 1,
+                        "GENDER": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "29": {
+                        "ADDRESS": 1,
+                        "DOB": 1,
+                        "NAME": 1,
+                        "PASSPORT": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "45": {
+                        "NAME": 1,
+                        "PHONE": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "22": {
+                        "ADDRESS": 1,
+                        "DOB": 1,
+                        "NAME": 1,
+                        "PHONE": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "41": {
+                        "ADDRESS": 1,
+                        "DOB": 1,
+                        "DRLIC": 1,
+                        "NAME": 2,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "39": {
+                        "ADDRESS": 1,
+                        "NAME": 1,
+                        "PASSPORT": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "30": {
+                        "ADDRESS": 1,
+                        "DOB": 1,
+                        "NAME": 1,
+                        "PASSPORT": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "9": {
+                        "ADDRESS": 2,
+                        "DOB": 1,
+                        "DRLIC": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "65": {
+                        "DOB": 1,
+                        "GENDER": 2,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1,
+                        "SSN": 1
+                    }
+                },
+                {
+                    "67": {
+                        "ADDRESS": 2,
+                        "DOB": 1,
+                        "NAME": 1,
+                        "PASSPORT": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "71": {
+                        "DOB": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "PHONE": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "69": {
+                        "ADDRESS": 2,
+                        "DOB": 1,
+                        "NAME": 1,
+                        "PASSPORT": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "91": {
+                        "ADDRESS": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "63": {
+                        "ADDRESS": 1,
+                        "DOB": 1,
+                        "GENDER": 2,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "77": {
+                        "DOB": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "PHONE": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "87": {
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "85": {
+                        "ADDRESS": 2,
+                        "EMAIL": 1,
+                        "GENDER": 2,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "89": {
+                        "DRLIC": 1,
+                        "GENDER": 2,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "92": {
+                        "ADDRESS": 2,
+                        "NAME": 1,
+                        "NATIONAL_ID": 1,
+                        "RECORD_TYPE": 1,
+                        "REL_ANCHOR": 1
+                    }
+                },
+                {
+                    "96": {
+                        "ADDRESS": 1,
+                        "NAME": 3,
+                        "PHONE": 1,
+                        "RECORD_TYPE": 1,
+                        "REL_ANCHOR": 1,
+                        "REL_POINTER": 1,
+                        "TAX_ID": 1
+                    }
+                },
+                {
+                    "94": {
+                        "ADDRESS": 1,
+                        "NAME": 4,
+                        "RECORD_TYPE": 1,
+                        "REL_ANCHOR": 1,
+                        "TAX_ID": 1
+                    }
+                },
+                {
+                    "79": {
+                        "DOB": 1,
+                        "DRLIC": 1,
+                        "NAME": 2,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "81": {
+                        "DOB": 1,
+                        "DRLIC": 1,
+                        "GENDER": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "73": {
+                        "DOB": 1,
+                        "EMAIL": 1,
+                        "GENDER": 2,
+                        "NAME": 1,
+                        "PHONE": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "98": {
+                        "ADDRESS": 2,
+                        "LEI_NUMBER": 1,
+                        "NAME": 2,
+                        "NATIONAL_ID": 1,
+                        "RECORD_TYPE": 1,
+                        "REL_POINTER": 1
+                    }
+                },
+                {
+                    "100003": {
+                        "EMAIL": 1,
+                        "EMPLOYER": 1,
+                        "NAME": 2,
+                        "PHONE": 1,
+                        "RECORD_TYPE": 1,
+                        "REL_POINTER": 1
+                    }
+                },
+                {
+                    "100009": {
+                        "EMPLOYER": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1,
+                        "REL_POINTER": 1
+                    }
+                },
+                {
+                    "105": {
+                        "ADDRESS": 1,
+                        "DOB": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "100021": {
+                        "ADDRESS": 2,
+                        "EMAIL": 1,
+                        "EMPLOYER": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1,
+                        "REL_POINTER": 1
+                    }
+                },
+                {
+                    "100006": {
+                        "ADDRESS": 1,
+                        "EMPLOYER": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1,
+                        "REL_POINTER": 1
+                    }
+                },
+                {
+                    "83": {
+                        "ADDRESS": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "97": {
+                        "ADDRESS": 1,
+                        "LEI_NUMBER": 1,
+                        "NAME": 2,
+                        "RECORD_TYPE": 1,
+                        "REL_ANCHOR": 1,
+                        "TAX_ID": 1
+                    }
+                },
+                {
+                    "100011": {
+                        "ADDRESS": 1,
+                        "EMPLOYER": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1,
+                        "REL_POINTER": 1
+                    }
+                },
+                {
+                    "113": {
+                        "ADDRESS": 1,
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "100013": {
+                        "ADDRESS": 2,
+                        "EMPLOYER": 1,
+                        "NAME": 1,
+                        "PHONE": 1,
+                        "RECORD_TYPE": 1,
+                        "REL_POINTER": 1
+                    }
+                },
+                {
+                    "99": {
+                        "ADDRESS": 2,
+                        "NAME": 2,
+                        "PHONE": 1,
+                        "RECORD_TYPE": 1,
+                        "REL_POINTER": 1,
+                        "TAX_ID": 1
+                    }
+                },
+                {
+                    "200009": {
+                        "ADDRESS": 1,
+                        "AMBIGUOUS_ENTITY": 2,
+                        "GENDER": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "100017": {
+                        "ADDRESS": 1,
+                        "EMPLOYER": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1,
+                        "REL_POINTER": 1
+                    }
+                },
+                {
+                    "100015": {
+                        "ADDRESS": 2,
+                        "EMPLOYER": 1,
+                        "NAME": 1,
+                        "PHONE": 1,
+                        "RECORD_TYPE": 1,
+                        "REL_POINTER": 1
+                    }
+                }
+            ]
+        },
+        "3": {
+            "COUNT": 6,
+            "SAMPLE": [
+                {
+                    "15": {
+                        "DOB": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "36": {
+                        "DOB": 1,
+                        "NAME": 1,
+                        "PASSPORT": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "32": {
+                        "EMAIL": 1,
+                        "NAME": 1,
+                        "RECORD_TYPE": 1
+                    }
+                },
+                {
+                    "57": {
+                        "ADDRESS": 1,
+                        "DOB": 1,
+                        "GENDER": 1,
+                        "NAME": 1,
+                        "NATIONAL_ID": 1,
+                        "RECORD_TYPE": 1,
+                        "REL_POINTER": 1
+                    }
+                },
+                {
+                    "95": {
+                        "ADDRESS": 1,
+                        "EMPLOYER": 1,
+                        "NAME": 2,
+                        "PHONE": 2,
+                        "RECORD_TYPE": 1,
+                        "REL_POINTER": 1
+                    }
+                },
+                {
+                    "54": {
+                        "ADDRESS": 1,
+                        "DOB": 1,
+                        "GENDER": 1,
+                        "NAME": 1,
+                        "NATIONAL_ID": 1,
+                        "RECORD_TYPE": 1,
+                        "REL_POINTER": 1
+                    }
+                }
+            ]
+        },
+        "6": {
+            "COUNT": 1,
+            "SAMPLE": [
+                {
+                    "49": {
+                        "ADDRESS": 2,
+                        "DOB": 1,
+                        "DRLIC": 1,
+                        "NAME": 1,
+                        "PASSPORT": 1,
+                        "RECORD_TYPE": 1,
+                        "SSN": 1
+                    }
+                }
+            ]
+        }
+    }
+}

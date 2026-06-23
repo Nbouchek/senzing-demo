@@ -1,0 +1,7 @@
+# Example cron jobs (Mac: crontab -e, paste one line, edit path)
+#
+# Daily: all Parquet sources from MinIO
+# 0 2 * * * cd /Users/nacer/Dev/Tutorials/senzing-demo && source ./setup-env.sh && source ./setup-minio-env.sh && ./pipeline/run_all_from_minio.sh >> staging/cron.log 2>&1
+#
+# Weekly: my_team practice dataset (Phase C)
+# 0 3 * * 1 cd /Users/nacer/Dev/Tutorials/senzing-demo && source ./setup-env.sh && source ./setup-minio-env.sh && ./pipeline/run_my_team_from_minio.sh >> staging/cron_my_team.log 2>&1

@@ -1,0 +1,7 @@
+employee_id,first_name,last_name,dob,addr_line1,city,state,postal,phone,email,employer,department,hire_date,status
+E001,Jane,Doe,1985-03-15,100 Oak St,Austin,TX,78701,512-555-0101,jane.doe@acme.com,Acme Corp,Engineering,2020-01-15,Active
+E002,Jane,Doee,1985-03-15,100 Oak Street,Austin,TX,78701,512-555-0101,jane.d@acme.com,Acme Corp,Engineering,2020-01-15,Active
+E003,John,Smith,1990-07-22,200 Pine Rd,Dallas,TX,75201,214-555-0202,john@tech.io,TechStart,Sales,2019-06-01,Active
+E004,John,Smith,1990-07-22,200 Pine Road,Dallas,TX,75201,214-555-0202,john.smith@tech.io,TechStart,Product,2021-03-10,Active
+E005,Maria,Garcia,1978-11-30,50 Elm Ave,Houston,TX,77001,713-555-0303,maria@hr.com,Global HR,HR,2015-09-01,Active
+E006,Robert,Smith,1965-01-01,638 Downey St,Salem,OR,97301,503-555-0404,rob@mail.com,Retail Co,Ops,2010-05-01,Active
