@@ -792,25 +792,18 @@ senzing-demo/
 │   ├── my_team.csv
 │   └── local_clients.csv
 │
-├── truthset_snapshot.json         ← load in sz_explorer for reports
-├── truthset_snapshot.csv          ← input to sz_audit
-├── truthset_audit.json            ← load for audit_summary
-├── actual_audit.json              ← 100% truth comparison
-├── actual_truthset_key.csv        ← definitive truth key
-├── alternate_truthset_key.csv     ← legacy-style comparison key
+├── actual_truthset_key.csv        ← definitive truth key (committed)
+├── alternate_truthset_key.csv     ← legacy-style comparison key (committed)
 │
-├── incoming/                    ← synced from MinIO
-│   ├── customers/
-│   ├── watchlist/
-│   ├── vendors/
-│   ├── my_team/
-│   └── local_clients/
-├── staging/
-│   ├── mapped_*_pq.jsonl        ← mapped before load
-│   └── .processed_files.log     ← idempotency tracker
+├── incoming/                    ← synced from MinIO (gitignored; .gitkeep only)
+├── staging/                     ← mapped JSONL + logs (gitignored; .gitkeep only)
 ├── parquet/
 │   ├── jsonl_to_parquet.py
-│   └── *.parquet
+│   └── *.parquet                ← built by setup_minio.sh (gitignored)
+│
+├── truthset_snapshot.*          ← sz_snapshot output (gitignored)
+├── truthset_audit.*             ← sz_audit output (gitignored)
+├── actual_audit.*               ← sz_audit output (gitignored)
 └── pipeline/
     ├── setup_minio.sh
     ├── run_pipeline.sh

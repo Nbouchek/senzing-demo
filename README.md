@@ -176,10 +176,31 @@ senzing-demo/
 ├── watchlist.jsonl              ┘
 ├── learning/                    ← my_team.csv + local_clients.csv exercises
 ├── pipeline/                    ← run_pipeline.sh, MinIO scripts
-├── parquet/                     ← sample Parquet files
-├── incoming/                    ← Parquet downloaded from MinIO
-└── staging/                     ← mapped JSONL + .processed_files.log
+├── parquet/                     ← Parquet build scripts (*.parquet is generated)
+├── incoming/                    ← Parquet downloaded from MinIO (gitignored)
+└── staging/                     ← mapped JSONL + logs (gitignored)
 ```
+
+---
+
+## Generated files (not in git)
+
+Pipeline and EDA commands write local artifacts. These are **gitignored** so runs do not dirty the repo:
+
+| Path | Created by |
+|------|------------|
+| `staging/mapped_*.jsonl` | `run_pipeline.sh`, load scripts |
+| `staging/.processed_files.log` | Pipeline idempotency tracker |
+| `staging/cron*.log` | Scheduled or manual pipeline runs |
+| `incoming/**/*.parquet` | MinIO sync or local Parquet build |
+| `parquet/*.parquet` | `setup_minio.sh`, `csv_to_parquet.py` |
+| `truthset_snapshot.*` | `sz_snapshot` |
+| `truthset_audit.*`, `actual_audit.*` | `sz_audit` |
+| `*_export.jsonl`, `snapshots.json` | `sz_explorer` exports |
+
+Fresh clone: run the [Quick start](#quick-start) (or `./pipeline/setup_minio.sh` for MinIO exercises). Directories exist via `.gitkeep`; files appear on first run.
+
+To force a reload after a pipeline run: remove the matching line from `staging/.processed_files.log`, or delete the file entirely.
 
 ---
 
