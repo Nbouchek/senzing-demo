@@ -17,7 +17,7 @@ Use this doc in order the first time, then as a quick reference later.
   - [Merged vs related (critical for learning)](#merged-vs-related-critical-for-learning)
   - [Data flow (what you built locally)](#data-flow-what-you-built-locally)
   - [Three EDA tools](#three-eda-tools)
-- [2. Learning curriculum (8 phases)](#2-learning-curriculum-8-phases)
+- [2. Learning curriculum (phases 1–11)](#2-learning-curriculum)
 - [3. Every session — start here](#3-every-session-start-here)
 - [4. Where to run commands](#4-where-to-run-commands)
 - [5. Initial setup (first time only)](#5-initial-setup-first-time-only)
@@ -65,7 +65,8 @@ Use this doc in order the first time, then as a quick reference later.
   - [Workflow 1 — Explore live data (5 min)](#workflow-1-explore-live-data-5-min)
   - [Workflow 2 — Full MinIO pipeline + reports (10 min)](#workflow-2-full-minio-pipeline-reports-10-min)
   - [Workflow 3 — Vendors learning check (5 min)](#workflow-3-vendors-learning-check-5-min)
-  - [Workflow 4 — Fresh start (wipe all data)](#workflow-4-fresh-start-wipe-all-data)
+  - [Workflow 4 — LOCAL_CLIENTS capstone (15 min)](#workflow-4-local_clients-capstone-15-min)
+  - [Workflow 5 — Fresh start (wipe all data)](#workflow-5-fresh-start-wipe-all-data)
 - [13. Official docs](#13-official-docs)
 - [Local vs AWS (when you eventually migrate)](#local-vs-aws-when-you-eventually-migrate)
 
@@ -135,8 +136,8 @@ Senzing **never loads Parquet directly**. Pipeline always: **Parquet → map →
 
 ---
 
-<a id="2-learning-curriculum-8-phases"></a>
-## 2. Learning curriculum (8 phases)
+<a id="2-learning-curriculum"></a>
+## 2. Learning curriculum (phases 1–11)
 
 Work through in order. Check off as you go.
 
@@ -152,6 +153,7 @@ Work through in order. Check off as you go.
 | **8** | Vendors exercise | `learn_local_exercise.sh` → verify merge & screening |
 | **9** | Data mapping (CSV) | [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md) → `load_my_team.sh` |
 | **10** | Pipeline ops (MinIO) | `run_my_team_from_minio.sh`, cron, processed log |
+| **11** | Your own data capstone | `load_local_clients.sh`, `run_local_clients_from_minio.sh` |
 
 ---
 
@@ -292,6 +294,10 @@ done
 | `pipeline/run_pipeline.sh` | One dataset: acquire → map → load → snapshot |
 | `pipeline/run_all_from_minio.sh` | Customers + watchlist from MinIO, then snapshot |
 | `pipeline/learn_local_exercise.sh` | Load VENDORS_PQ learning dataset |
+| `pipeline/load_my_team.sh` | Phase B: map/load MY_TEAM from CSV |
+| `pipeline/run_my_team_from_minio.sh` | Phase C: MY_TEAM via MinIO |
+| `pipeline/load_local_clients.sh` | Phase B: map/load LOCAL_CLIENTS (Exercise 15) |
+| `pipeline/run_local_clients_from_minio.sh` | Phase C: LOCAL_CLIENTS via MinIO |
 
 <a id="full-pipeline-from-minio"></a>
 ### Full pipeline from MinIO
@@ -328,6 +334,7 @@ JSONL_FILE=mapped_vendors_pq.jsonl \
 rm staging/.processed_files.log
 # Or remove one source only:
 grep -v '^VENDORS_PQ-' staging/.processed_files.log > staging/.tmp && mv staging/.tmp staging/.processed_files.log
+grep -v '^LOCAL_CLIENTS_PQ-' staging/.processed_files.log > staging/.tmp && mv staging/.tmp staging/.processed_files.log
 ```
 
 <a id="minio-aws-cli-after-source-setup-minio-envsh"></a>
@@ -348,7 +355,9 @@ aws --endpoint-url http://localhost:9000 s3 cp \
 s3://senzing-incoming/
 ├── customers/customers.parquet   → CUSTOMERS_PQ
 ├── watchlist/watchlist.parquet   → WATCHLIST_PQ
-└── vendors/vendors.parquet       → VENDORS_PQ
+├── vendors/vendors.parquet       → VENDORS_PQ
+├── my_team/my_team.parquet       → MY_TEAM_PQ
+└── local_clients/local_clients.parquet → LOCAL_CLIENTS_PQ
 ```
 
 <a id="snapshot-mac-refreshes-reports"></a>
@@ -719,7 +728,7 @@ data_source_summary
 | `the input device is not a TTY` | `-it` in script | Remove `-it` for automation |
 | MinIO connection refused | MinIO down | `docker compose up -d minio` |
 | `relation already exists` on init | DB already init | OK — skip or `docker compose down -v` to reset |
-| Cursor **Preview unavailable** on file | Opened `.parquet` or binary in IDE | Use terminal/`sz_explorer` — see [Viewing files](#viewing-files-cursor--minio) |
+| Cursor **Preview unavailable** on file | Opened `.parquet` or binary in IDE | Use terminal/`sz_explorer` — see [Viewing files](#viewing-files-cursor-minio) |
 
 ---
 
@@ -779,6 +788,10 @@ senzing-demo/
 ├── watchlist.jsonl              ┘
 ├── vendors.jsonl                ← learning exercise (3 records)
 │
+├── learning/
+│   ├── my_team.csv
+│   └── local_clients.csv
+│
 ├── truthset_snapshot.json         ← load in sz_explorer for reports
 ├── truthset_snapshot.csv          ← input to sz_audit
 ├── truthset_audit.json            ← load for audit_summary
@@ -789,7 +802,9 @@ senzing-demo/
 ├── incoming/                    ← synced from MinIO
 │   ├── customers/
 │   ├── watchlist/
-│   └── vendors/
+│   ├── vendors/
+│   ├── my_team/
+│   └── local_clients/
 ├── staging/
 │   ├── mapped_*_pq.jsonl        ← mapped before load
 │   └── .processed_files.log     ← idempotency tracker
@@ -801,6 +816,10 @@ senzing-demo/
     ├── run_pipeline.sh
     ├── run_all_from_minio.sh
     ├── learn_local_exercise.sh
+    ├── load_my_team.sh
+    ├── run_my_team_from_minio.sh
+    ├── load_local_clients.sh
+    ├── run_local_clients_from_minio.sh
     ├── map_parquet_to_jsonl.py
     └── schedule.example.cron
 ```
@@ -816,6 +835,8 @@ senzing-demo/
 | `CUSTOMERS_PQ` | MinIO Parquet pipeline | 120 |
 | `WATCHLIST_PQ` | MinIO Parquet pipeline | 17 |
 | `VENDORS_PQ` | Learning exercise | 3 |
+| `MY_TEAM`, `MY_TEAM_PQ` | Employee CSV mapping tutorial | 7 / 7 |
+| `LOCAL_CLIENTS`, `LOCAL_CLIENTS_PQ` | Fake client capstone (Exercise 15) | 10 / 10 |
 
 ---
 
@@ -875,8 +896,36 @@ exit
 
 ---
 
-<a id="workflow-4-fresh-start-wipe-all-data"></a>
-### Workflow 4 — Fresh start (wipe all data)
+<a id="workflow-4-local_clients-capstone-15-min"></a>
+### Workflow 4 — LOCAL_CLIENTS capstone (15 min)
+
+```bash
+source ./setup-env.sh
+./pipeline/load_local_clients.sh
+
+source ./setup-minio-env.sh
+./pipeline/run_local_clients_from_minio.sh
+```
+
+Open [EXPLORER-SESSION.md](./EXPLORER-SESSION.md), then at `(szeda)`:
+
+```
+get LOCAL_CLIENTS CL001
+get LOCAL_CLIENTS CL002
+get LOCAL_CLIENTS CL007 detail
+get LOCAL_CLIENTS CL008 detail
+load truthset_snapshot.json
+cross_source_summary
+quit
+exit
+```
+
+Full steps: [EXERCISES.md § Exercise 15](./EXERCISES.md#exercise-15-local_clients-map-your-own-fake-data-phase-b-c)
+
+---
+
+<a id="workflow-5-fresh-start-wipe-all-data"></a>
+### Workflow 5 — Fresh start (wipe all data)
 
 ```bash
 docker compose down -v

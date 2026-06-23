@@ -1,5 +1,5 @@
 <a id="senzing-data-mapping-phase-b-c-workbook"></a>
-# Senzing Data Mapping — Phase B & C Workbook
+# Senzing Data Mapping — Phase B, C & D Workbook
 
 Step-by-step guide for **mapping your own data** and **operating the pipeline locally** (MinIO = S3, no AWS account).
 
@@ -34,6 +34,12 @@ Step-by-step guide for **mapping your own data** and **operating the pipeline lo
   - [C4 — Simulate an updated file drop](#c4-simulate-an-updated-file-drop)
   - [C5 — Schedule with cron (Mac)](#c5-schedule-with-cron-mac)
   - [C6 — Daily operations checklist](#c6-daily-operations-checklist)
+- [Phase D — LOCAL_CLIENTS (your own data capstone)](#phase-d-local_clients-your-own-data-capstone)
+  - [D1 — Study the fake client data](#d1-study-the-fake-client-data)
+  - [D2 — Phase B: map and load LOCAL_CLIENTS](#d2-phase-b-map-and-load-local_clients)
+  - [D3 — Verify merges vs related in explorer](#d3-verify-merges-vs-related-in-explorer)
+  - [D4 — Phase C: MinIO pipeline for LOCAL_CLIENTS_PQ](#d4-phase-c-minio-pipeline-for-local_clients_pq)
+  - [D5 — Optional: edit CSV and re-drop](#d5-optional-edit-csv-and-re-drop)
 - [Local vs AWS (when you eventually get S3)](#local-vs-aws-when-you-eventually-get-s3)
 - [Project file map (Phase B & C)](#project-file-map-phase-b-c)
 - [Troubleshooting](#troubleshooting)
@@ -94,6 +100,19 @@ source ./setup-minio-env.sh   # Phase C only
 | C4 | Simulate updated file re-drop | ☐ |
 | C5 | Schedule with cron | ☐ |
 | C6 | Daily run + snapshot + screening | ☐ |
+
+<a id="phase-d-checklist"></a>
+### Phase D — LOCAL_CLIENTS capstone
+
+| # | Exercise | Done |
+|---|----------|------|
+| D1 | Study `local_clients.csv` + expected merges | ☐ |
+| D2 | Phase B: `./pipeline/load_local_clients.sh` | ☐ |
+| D3 | Verify merges vs related in explorer | ☐ |
+| D4 | Phase C: `./pipeline/run_local_clients_from_minio.sh` | ☐ |
+| D5 | Optional: edit one row + re-drop via MinIO | ☐ |
+
+> **When to do Phase D:** After Phase B/C with `MY_TEAM`. Phase D repeats the same skills on a **second dataset** so you practice mapping without copying answers from Exercise 9–11.
 
 ---
 
@@ -718,7 +737,140 @@ CLUSTER_ID,RECORD_ID,DATA_SOURCE
 
 Each `CLUSTER_ID` is the entity grouping you **expect**. Senzing’s snapshot is the **newer** result; the key is the **prior** expectation.
 
-> **MY_TEAM / MY_TEAM_PQ:** This repo does not ship a truth key for your employee CSV. For mapping exercises, use `get`, `how`, and `data_source_summary` instead. To audit `MY_TEAM`, you would create e.g. `learning/my_team_truth_key.csv` listing which `RECORD_ID`s should merge (E001+E002 → cluster 1, E003+E004 → cluster 2, etc.).
+> **MY_TEAM / MY_TEAM_PQ / LOCAL_CLIENTS / LOCAL_CLIENTS_PQ:** This repo does not ship truth keys for your practice CSVs. For mapping exercises, use `get`, `how`, and `data_source_summary` instead. To audit a practice source, create e.g. `learning/local_clients_truth_key.csv` listing which `RECORD_ID`s should merge (CL001+CL002 → cluster 1, etc.).
+
+---
+
+<a id="phase-d-local_clients-your-own-data-capstone"></a>
+## Phase D — LOCAL_CLIENTS (your own data capstone)
+
+**Exercise workbook:** [EXERCISES.md § Exercise 15](./EXERCISES.md#exercise-15-local_clients-map-your-own-fake-data-phase-b-c)
+
+Phase D uses **`learning/local_clients.csv`** — 10 fake client contacts for a fictional Oregon consulting firm. You map, load, explore, then run the full MinIO pipeline — the same workflow real projects use daily.
+
+<a id="d1-study-the-fake-client-data"></a>
+### D1 — Study the fake client data
+
+Open `learning/local_clients.csv` and read the mapper: `learning/map_local_clients_csv.py`.
+
+| client_id | Person | What to learn |
+|-----------|--------|---------------|
+| CL001 + CL002 | Sarah / Sara Chen | **Merged** — typo in first name, `St` vs `Street` |
+| CL003 + CL004 | Michael Brown | **Merged** — two emails, same DOB/phone |
+| CL005 | Emily Davis | Single entity — no duplicate |
+| CL006 | James Wilson | May **relate** to CUSTOMERS Robert Smith (638 Downey St, same DOB) |
+| CL007 + CL008 | David & Lisa Kim | **Related, not merged** — couple at same address |
+| CL009 + CL010 | Pat Taylor | **Merged** — `Hill Rd` vs `Hill Road` |
+
+**Column → Senzing mapping** (same pattern as MY_TEAM):
+
+| CSV column | Senzing attribute |
+|------------|-------------------|
+| `client_id` | `RECORD_ID` |
+| `first_name` / `last_name` | `PRIMARY_NAME_FIRST` / `PRIMARY_NAME_LAST` |
+| `dob` | `DATE_OF_BIRTH` |
+| address fields | `ADDR_*` with `ADDR_TYPE=HOME` |
+| `phone` | `PHONE_NUMBER` with `PHONE_TYPE=MOBILE` |
+| `email` | `EMAIL_ADDRESS` |
+| `company` | `EMPLOYER` (not `NAME_ORG` on the person) |
+| `account_type`, `signup_date` | payload fields |
+
+**✅ D1 done when:** You can predict which pairs will merge vs stay related.
+
+<a id="d2-phase-b-map-and-load-local_clients"></a>
+### D2 — Phase B: map and load LOCAL_CLIENTS
+
+```bash
+cd ~/Dev/Tutorials/senzing-demo
+docker compose up -d
+source ./setup-env.sh
+./pipeline/load_local_clients.sh
+```
+
+Inspect mapped JSONL:
+
+```bash
+head -2 staging/mapped_local_clients.jsonl | python3 -m json.tool
+```
+
+**✅ D2 done when:** Load succeeds; `quick_look` shows `LOCAL_CLIENTS` with 10 records.
+
+<a id="d3-verify-merges-vs-related-in-explorer"></a>
+### D3 — Verify merges vs related in explorer
+
+Follow [EXPLORER-SESSION.md](./EXPLORER-SESSION.md), then at `(szeda)`:
+
+```
+get LOCAL_CLIENTS CL001
+get LOCAL_CLIENTS CL002
+get LOCAL_CLIENTS CL003 detail
+get LOCAL_CLIENTS CL004 detail
+get LOCAL_CLIENTS CL007 detail
+get LOCAL_CLIENTS CL008 detail
+how <entity_id>
+search sarah chen
+load truthset_snapshot.json
+data_source_summary
+cross_source_summary
+quit
+exit
+```
+
+**Questions to answer:**
+
+1. Do CL001 and CL002 share the same entity ID?
+2. Do CL007 and CL008 merge, or only show as **related**?
+3. Does CL006 appear in `cross_source_summary` against CUSTOMERS?
+
+**✅ D3 done when:** You can explain merged vs related for at least one pair.
+
+<a id="d4-phase-c-minio-pipeline-for-local_clients_pq"></a>
+### D4 — Phase C: MinIO pipeline for LOCAL_CLIENTS_PQ
+
+```bash
+source ./setup-env.sh && source ./setup-minio-env.sh
+./pipeline/run_local_clients_from_minio.sh
+```
+
+MinIO console: http://localhost:9001 (`minioadmin` / `minioadmin`) — path `senzing-incoming/local_clients/local_clients.parquet`.
+
+Compare ingestion paths:
+
+```
+get LOCAL_CLIENTS CL001
+get LOCAL_CLIENTS_PQ CL001
+```
+
+**Learn:** `LOCAL_CLIENTS` (Phase B) and `LOCAL_CLIENTS_PQ` (Phase C) are **separate data sources** — same pattern as MY_TEAM vs MY_TEAM_PQ.
+
+Idempotent reload (second run skips):
+
+```bash
+./pipeline/run_local_clients_from_minio.sh   # "Already processed"
+grep -v '^LOCAL_CLIENTS_PQ-' staging/.processed_files.log > staging/.tmp && mv staging/.tmp staging/.processed_files.log
+./pipeline/run_local_clients_from_minio.sh   # runs again
+```
+
+**✅ D4 done when:** `LOCAL_CLIENTS_PQ` appears in `quick_look`; you compared B vs C for one record.
+
+<a id="d5-optional-edit-csv-and-re-drop"></a>
+### D5 — Optional: edit CSV and re-drop
+
+1. Edit one row in `learning/local_clients.csv` (e.g. change CL005 phone).
+2. Clear processed log and re-run:
+
+```bash
+grep -v '^LOCAL_CLIENTS_PQ-' staging/.processed_files.log > staging/.tmp 2>/dev/null || true
+mv staging/.tmp staging/.processed_files.log 2>/dev/null || true
+source ./setup-env.sh && source ./setup-minio-env.sh
+./pipeline/run_local_clients_from_minio.sh
+```
+
+3. `get LOCAL_CLIENTS_PQ CL005` — see if entity features changed.
+
+**Next:** Copy `learning/map_local_clients_csv.py`, rename columns for your own sanitized export.
+
+**✅ Phase D complete when:** D1–D4 checked off.
 
 ---
 
@@ -742,22 +894,30 @@ Each `CLUSTER_ID` is the entity grouping you **expect**. Senzing’s snapshot is
 
 ```text
 learning/
-├── my_team.csv                  ← your practice CSV
-├── map_my_team_csv.py           ← Phase B mapper
+├── my_team.csv                  ← Phase B/C tutorial CSV (employees)
+├── local_clients.csv            ← Phase D capstone CSV (fake clients)
+├── map_my_team_csv.py           ← Phase B mapper (MY_TEAM)
+├── map_local_clients_csv.py     ← Phase B mapper (LOCAL_CLIENTS)
 ├── csv_to_parquet.py            ← CSV → Parquet
-└── map_my_team_parquet.py       ← Phase C mapper
+├── map_my_team_parquet.py       ← Phase C mapper (MY_TEAM_PQ)
+└── map_local_clients_parquet.py ← Phase C mapper (LOCAL_CLIENTS_PQ)
 
 pipeline/
-├── load_my_team.sh              ← Phase B: direct load
-├── run_my_team_from_minio.sh    ← Phase C: full MinIO path
+├── load_my_team.sh              ← Phase B: MY_TEAM direct load
+├── load_local_clients.sh        ← Phase B: LOCAL_CLIENTS direct load
+├── run_my_team_from_minio.sh    ← Phase C: MY_TEAM full MinIO path
+├── run_local_clients_from_minio.sh ← Phase C: LOCAL_CLIENTS full MinIO path
 ├── run_my_team_pipeline.sh      ← map/load/snapshot for MY_TEAM_PQ
+├── run_local_clients_pipeline.sh ← map/load/snapshot for LOCAL_CLIENTS_PQ
 ├── run_pipeline.sh              ← generic template
 ├── run_all_from_minio.sh        ← customers + watchlist batch
 └── schedule.example.cron        ← cron template
 
 staging/
-├── mapped_my_team.jsonl         ← Phase B output
-├── mapped_my_team_pq.jsonl      ← Phase C output
+├── mapped_my_team.jsonl         ← Phase B MY_TEAM output
+├── mapped_local_clients.jsonl   ← Phase B LOCAL_CLIENTS output
+├── mapped_my_team_pq.jsonl      ← Phase C MY_TEAM output
+├── mapped_local_clients_pq.jsonl ← Phase C LOCAL_CLIENTS output
 └── .processed_files.log         ← idempotency tracker
 ```
 
@@ -772,6 +932,7 @@ staging/
 | `Already processed` | Edit/remove line in `staging/.processed_files.log` |
 | MinIO upload fails | `docker compose up -d minio` |
 | No MY_TEAM in quick_look | Re-run `./pipeline/load_my_team.sh` |
+| No LOCAL_CLIENTS in quick_look | Re-run `./pipeline/load_local_clients.sh` |
 | Overmatching after bad map | Use `EMPLOYER` not `NAME_ORG` for employer column |
 | `cross_source_summary` ERROR | `load truthset_snapshot.json` first |
 
@@ -785,7 +946,7 @@ staging/
 | Auto-map Parquet columns | [mapper-file](https://github.com/Senzing/mapper-file) |
 | ER configuration tuning | Senzing docs: Managing ER configuration (advanced) |
 | Reprocessing after config change | Advanced Zendesk articles |
-| Your real company CSV | Copy `learning/map_my_team_csv.py` as template |
+| Your real company CSV | Copy `learning/map_local_clients_csv.py` as template |
 
 ---
 
@@ -793,9 +954,10 @@ staging/
 ## Learning tracks summary
 
 ```text
-Track 1 (Analyst)     → Phase B4 + B5 + C6 screening workflow
+Track 1 (Analyst)     → Phase B4 + B5 + C6 + D3 screening workflow
 Track 2 (Pipeline)    → Phase C1–C5 + run_all_from_minio.sh
-Track 3 (Your data)   → Replace my_team.csv with your sanitized export
+Track 3 (Your data)   → Phase D (local_clients) then replace CSV with your export
+Track 4 (MY_TEAM)     → Phase B/C with my_team.csv (tutorial walkthrough first)
 ```
 
 ---

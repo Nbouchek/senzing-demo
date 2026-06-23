@@ -1090,7 +1090,7 @@ quit
 | Counts differ from tutorial | Extra sources loaded (PQ/vendors) — reset DB or ignore extra rows |
 | SSL / schema errors | Connection string must use `:G2?sslmode=disable` — see `setup-env.sh` |
 
-More fixes: [CHEATSHEET.md § Common errors](./CHEATSHEET.md#10-common-errors--fixes)
+More fixes: [CHEATSHEET.md § Common errors](./CHEATSHEET.md#10-common-errors-fixes)
 
 ---
 

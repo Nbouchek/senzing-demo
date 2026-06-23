@@ -101,15 +101,16 @@ Senzing does **not** load Parquet directly. The pipeline always: **Parquet → m
 | [**EXPLORER-SESSION.md**](EXPLORER-SESSION.md) | **Start here for sz_explorer** — open, use, exit |
 | [**CHEATSHEET.md**](CHEATSHEET.md) | Quick reference — commands, errors, workflows |
 | [**EDA-TUTORIAL.md**](EDA-TUTORIAL.md) | Official [Senzing EDA](https://senzing.zendesk.com/hc/en-us/sections/360009388534-Exploratory-Data-Analysis-EDA) series |
-| [**EXERCISES.md**](EXERCISES.md) | Hands-on exercises 0–14 with checklists |
-| [**DATA-MAPPING-TUTORIAL.md**](DATA-MAPPING-TUTORIAL.md) | [Data mapping](https://senzing.zendesk.com/hc/en-us/sections/360000385913-Data-Mapping) + pipeline ops |
+| [**EXERCISES.md**](EXERCISES.md) | Hands-on exercises 0–15 with checklists |
+| [**DATA-MAPPING-TUTORIAL.md**](DATA-MAPPING-TUTORIAL.md) | [Data mapping](https://senzing.zendesk.com/hc/en-us/sections/360000385913-Data-Mapping) + pipeline ops + LOCAL_CLIENTS capstone |
 
 **Suggested path**
 
 1. EDA-TUTORIAL (Parts 0–6) — explore, snapshot, audit  
 2. EXERCISES 0–8 — truth set, MinIO pipeline, vendors  
 3. DATA-MAPPING-TUTORIAL (Phase B & C) — map `my_team.csv`, operate pipeline  
-4. CHEATSHEET — bookmark for daily use  
+4. EXERCISE 15 / Phase D — map `local_clients.csv` (your-data capstone)  
+5. CHEATSHEET — bookmark for daily use  
 
 ---
 
@@ -124,6 +125,8 @@ source ./setup-env.sh && source ./setup-minio-env.sh
 ./pipeline/learn_local_exercise.sh     # vendors exercise
 ./pipeline/load_my_team.sh             # Phase B: CSV → Senzing
 ./pipeline/run_my_team_from_minio.sh   # Phase C: CSV → MinIO → Senzing
+./pipeline/load_local_clients.sh       # Phase B: capstone fake client CSV
+./pipeline/run_local_clients_from_minio.sh  # Phase C: local_clients via MinIO
 ```
 
 ### Snapshot & audit
@@ -171,7 +174,7 @@ senzing-demo/
 ├── customers.jsonl              ┐
 ├── reference.jsonl              ├─ Senzing truth set
 ├── watchlist.jsonl              ┘
-├── learning/                    ← my_team.csv mapping exercises
+├── learning/                    ← my_team.csv + local_clients.csv exercises
 ├── pipeline/                    ← run_pipeline.sh, MinIO scripts
 ├── parquet/                     ← sample Parquet files
 ├── incoming/                    ← Parquet downloaded from MinIO
@@ -187,7 +190,8 @@ senzing-demo/
 | `CUSTOMERS`, `REFERENCE`, `WATCHLIST` | Original truth-set JSONL |
 | `CUSTOMERS_PQ`, `WATCHLIST_PQ` | Same data via Parquet/MinIO pipeline |
 | `VENDORS_PQ` | Vendor merge + watchlist screening exercise |
-| `MY_TEAM`, `MY_TEAM_PQ` | Your mapped employee CSV exercise |
+| `MY_TEAM`, `MY_TEAM_PQ` | Mapped employee CSV exercise (Phase B/C tutorial) |
+| `LOCAL_CLIENTS`, `LOCAL_CLIENTS_PQ` | Fake client contacts — your-data capstone (Exercise 15) |
 
 ---
 

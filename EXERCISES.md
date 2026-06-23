@@ -81,13 +81,14 @@ Companion reference: [CHEATSHEET.md](./CHEATSHEET.md)
 - [Exercise checklist (track your progress)](#exercise-checklist-track-your-progress)
 - [Troubleshooting quick reference](#troubleshooting-quick-reference)
 - [What you learned (summary)](#what-you-learned-summary)
-- [Exercises 9–14 — Data Mapping (Phase B & C)](#exercises-9-14-data-mapping-phase-b-c)
+- [Exercises 9–15 — Data Mapping (Phase B, C & D)](#exercises-9-15-data-mapping-phase-b-c-d)
   - [Exercise 9 — Map CSV to JSONL (Phase B)](#exercise-9-map-csv-to-jsonl-phase-b)
   - [Exercise 10 — Disclosed relationships](#exercise-10-disclosed-relationships)
   - [Exercise 11 — MinIO pipeline for MY_TEAM (Phase C)](#exercise-11-minio-pipeline-for-my_team-phase-c)
   - [Exercise 12 — Idempotent reload](#exercise-12-idempotent-reload)
   - [Exercise 13 — Simulate file update](#exercise-13-simulate-file-update)
   - [Exercise 14 — Scheduled batch](#exercise-14-scheduled-batch)
+  - [Exercise 15 — LOCAL_CLIENTS: map your own fake data (Phase B + C)](#exercise-15-local_clients-map-your-own-fake-data-phase-b-c)
 - [Extended checklist](#extended-checklist)
 - [Next steps (when ready)](#next-steps-when-ready)
 
@@ -878,7 +879,7 @@ You understand export → investigate → re-ingest workflow.
 | MinIO down | `docker compose up -d minio` |
 | Fresh start | `docker compose down -v` then redo Exercise 0 |
 
-Full list: [CHEATSHEET.md § Common errors](./CHEATSHEET.md#10-common-errors--fixes)
+Full list: [CHEATSHEET.md § Common errors](./CHEATSHEET.md#10-common-errors-fixes)
 
 ---
 
@@ -895,11 +896,12 @@ After all exercises you can:
 6. Operate a local S3-compatible pipeline without AWS
 7. Distinguish **merged** vs **related** entities
 8. Investigate duplicate vendors and watchlist hits
+9. Map and load your own CSV (`LOCAL_CLIENTS`) through direct and MinIO paths
 
 ---
 
-<a id="exercises-9-14-data-mapping-phase-b-c"></a>
-## Exercises 9–14 — Data Mapping (Phase B & C)
+<a id="exercises-9-15-data-mapping-phase-b-c-d"></a>
+## Exercises 9–15 — Data Mapping (Phase B, C & D)
 
 **Full workbook:** [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md)  
 **Official curriculum:** [Data Mapping – Senzing®](https://senzing.zendesk.com/hc/en-us/sections/360000385913-Data-Mapping)
@@ -1025,6 +1027,81 @@ tail staging/cron.log
 
 See `pipeline/schedule.example.cron` for daily cron on Mac.
 
+<a id="exercise-15-local_clients-map-your-own-fake-data-phase-b-c"></a>
+### Exercise 15 — LOCAL_CLIENTS: map your own fake data (Phase B + C)
+
+**Capstone exercise** after MY_TEAM. Uses `learning/local_clients.csv` — 10 fake Oregon client contacts with intentional duplicates, a related couple, and one cross-source screening candidate.
+
+**Study the data first** (`learning/local_clients.csv`):
+
+| Records | Expected result |
+|---------|-----------------|
+| CL001 + CL002 | **Merged** — Sarah/Sara Chen (typo + address variant) |
+| CL003 + CL004 | **Merged** — Michael Brown (two emails) |
+| CL005 | Single entity |
+| CL006 | May **relate** to CUSTOMERS Robert Smith (same address/DOB) |
+| CL007 + CL008 | **Related, not merged** — David & Lisa Kim (same address) |
+| CL009 + CL010 | **Merged** — Pat Taylor |
+
+**Step 1 — Phase B (direct CSV load)**
+
+```bash
+cd ~/Dev/Tutorials/senzing-demo
+docker compose up -d
+source ./setup-env.sh
+./pipeline/load_local_clients.sh
+```
+
+**Step 2 — Verify in sz_explorer**
+
+Follow [EXPLORER-SESSION.md](./EXPLORER-SESSION.md), then at `(szeda)`:
+
+```
+get LOCAL_CLIENTS CL001
+get LOCAL_CLIENTS CL002
+get LOCAL_CLIENTS CL007 detail
+get LOCAL_CLIENTS CL008 detail
+how <entity_id>
+search sarah chen
+load truthset_snapshot.json
+data_source_summary
+cross_source_summary
+quit
+```
+
+**Step 3 — Phase C (MinIO pipeline)**
+
+```bash
+source ./setup-env.sh && source ./setup-minio-env.sh
+./pipeline/run_local_clients_from_minio.sh
+```
+
+MinIO console: http://localhost:9001 — look for `senzing-incoming/local_clients/local_clients.parquet`.
+
+**Step 4 — Compare Phase B vs Phase C**
+
+```
+get LOCAL_CLIENTS CL001
+get LOCAL_CLIENTS_PQ CL001
+```
+
+Same people, **different data sources** — normal when two systems feed the same records.
+
+**Step 5 — Optional: edit and reload**
+
+Change one field in `learning/local_clients.csv` (e.g. CL005 phone), then:
+
+```bash
+grep -v '^LOCAL_CLIENTS_PQ-' staging/.processed_files.log > staging/.tmp 2>/dev/null || true
+mv staging/.tmp staging/.processed_files.log 2>/dev/null || true
+source ./setup-env.sh && source ./setup-minio-env.sh
+./pipeline/run_local_clients_from_minio.sh
+```
+
+**Full workbook:** [DATA-MAPPING-TUTORIAL.md § Phase D](./DATA-MAPPING-TUTORIAL.md#phase-d-local_clients-your-own-data-capstone)
+
+**✅ Done when:** You can explain which pairs merged vs related, and you have run both `./pipeline/load_local_clients.sh` and `./pipeline/run_local_clients_from_minio.sh`.
+
 ---
 
 <a id="extended-checklist"></a>
@@ -1038,13 +1115,15 @@ See `pipeline/schedule.example.cron` for daily cron on Mac.
 | 12 | Processed-files log | ☐ |
 | 13 | Updated file drop | ☐ |
 | 14 | Batch + cron | ☐ |
+| 15 | LOCAL_CLIENTS (Phase B + C capstone) | ☐ |
 
 ---
 
 <a id="next-steps-when-ready"></a>
 ## Next steps (when ready)
 
-- [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md) — Phase B & C in detail
+- [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md) — Phase B, C & D in detail
+- Copy `learning/map_local_clients_csv.py` and replace with **your** sanitized CSV columns
 - [mapper-file](https://github.com/Senzing/mapper-file) — auto-generate mappers from Parquet
 - Later with AWS: same scripts, drop `setup-minio-env.sh`, use real S3 bucket
 

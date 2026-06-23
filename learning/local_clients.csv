@@ -1,0 +1,11 @@
+client_id,first_name,last_name,dob,addr_line1,city,state,postal,phone,email,company,account_type,signup_date
+CL001,Sarah,Chen,1988-04-12,42 Market St,Portland,OR,97201,503-555-1001,sarah.chen@email.com,Northwest Consulting,Premium,2023-01-10
+CL002,Sara,Chen,1988-04-12,42 Market Street,Portland,OR,97201,503-555-1001,s.chen@email.com,Northwest Consulting,Premium,2023-01-10
+CL003,Michael,Brown,1975-09-03,88 Lakeview Blvd,Seattle,WA,98101,206-555-2002,mike.b@startup.io,Startup Labs,Standard,2022-11-05
+CL004,Michael,Brown,1975-09-03,88 Lakeview Boulevard,Seattle,WA,98101,206-555-2002,michael.brown@startup.io,Startup Labs,Standard,2022-11-05
+CL005,Emily,Davis,1995-12-20,15 Cedar Ln,Bend,OR,97701,541-555-3003,emily@design.co,Pixel Studio,Standard,2024-03-15
+CL006,James,Wilson,1965-01-01,638 Downey St,Salem,OR,97301,503-555-0404,jwilson@mail.com,Retail Partners,Legacy,2018-06-01
+CL007,David,Kim,1990-02-14,700 Union Ave,Portland,OR,97209,503-555-4500,david.kim@email.com,Kim & Associates,Premium,2023-08-01
+CL008,Lisa,Kim,1991-06-22,700 Union Ave,Portland,OR,97209,503-555-4501,lisa.kim@email.com,Kim & Associates,Premium,2023-08-01
+CL009,Pat,Taylor,1982-07-07,22 Hill Rd,Eugene,OR,97401,541-555-5505,pat.taylor@email.com,Taylor Freelance,Individual,2024-01-20
+CL010,Pat,Taylor,1982-07-07,22 Hill Road,Eugene,OR,97401,541-555-5505,pat@email.com,Taylor Freelance,Individual,2024-09-01
