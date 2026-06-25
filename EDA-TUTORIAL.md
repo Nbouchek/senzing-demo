@@ -6,13 +6,15 @@ Follow this workbook to complete every article in the official Senzing **Explora
 **Official series:** [Exploratory Data Analysis (EDA)](https://senzing.zendesk.com/hc/en-us/sections/360009388534-Exploratory-Data-Analysis-EDA)
 
 **Your project:** `~/Dev/Tutorials/senzing-demo`  
-**Companion docs:** [CHEATSHEET.md](./CHEATSHEET.md) · [EXERCISES.md](./EXERCISES.md) · [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md)
+**Companion docs:** [CORE-CONCEPTS.md](./CORE-CONCEPTS.md) · [CHEATSHEET.md](./CHEATSHEET.md) · [EXERCISES.md](./EXERCISES.md) · [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md)
+
+**New?** Read [CORE-CONCEPTS.md](./CORE-CONCEPTS.md) before Part 1.
 
 ---
 
 ## Table of contents
 
-**Workbooks:** [CHEATSHEET.md](./CHEATSHEET.md) · [EXERCISES.md](./EXERCISES.md) · [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md)
+**Workbooks:** [CORE-CONCEPTS.md](./CORE-CONCEPTS.md) · [CHEATSHEET.md](./CHEATSHEET.md) · [EXERCISES.md](./EXERCISES.md) · [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md)
 
 - [How this maps to the official tutorials](#how-this-maps-to-the-official-tutorials)
 - [Before every session](#before-every-session)

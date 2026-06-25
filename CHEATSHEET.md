@@ -9,7 +9,7 @@ Use this doc in order the first time, then as a quick reference later.
 
 ## Table of contents
 
-**Workbooks:** [EXERCISES.md](./EXERCISES.md) · [EDA-TUTORIAL.md](./EDA-TUTORIAL.md) · [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md) · **[EXPLORER-SESSION.md](./EXPLORER-SESSION.md)** ← open sz_explorer
+**Workbooks:** [EXERCISES.md](./EXERCISES.md) · [EDA-TUTORIAL.md](./EDA-TUTORIAL.md) · [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md) · **[CORE-CONCEPTS.md](./CORE-CONCEPTS.md)** · **[EXPLORER-SESSION.md](./EXPLORER-SESSION.md)** ← open sz_explorer
 
 - [1. Core concepts (read first)](#1-core-concepts-read-first)
   - [What Senzing does](#what-senzing-does)
@@ -74,6 +74,9 @@ Use this doc in order the first time, then as a quick reference later.
 
 <a id="1-core-concepts-read-first"></a>
 ## 1. Core concepts (read first)
+
+> **Full guide:** [CORE-CONCEPTS.md](./CORE-CONCEPTS.md) — records, entities, merged vs related, mapping, MinIO = S3, mastery checklist.  
+> Below is a **quick summary**; read the full doc before your first exercise.
 
 <a id="what-senzing-does"></a>
 ### What Senzing does
@@ -154,6 +157,8 @@ Work through in order. Check off as you go.
 | **9** | Data mapping (CSV) | [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md) → `load_my_team.sh` |
 | **10** | Pipeline ops (MinIO) | `run_my_team_from_minio.sh`, cron, processed log |
 | **11** | Your own data capstone | `load_local_clients.sh`, `run_local_clients_from_minio.sh` |
+
+**Concepts first:** [CORE-CONCEPTS.md](./CORE-CONCEPTS.md) before Phase 1 if you are new.
 
 ---
 
@@ -778,6 +783,7 @@ head -1 staging/mapped_customers_pq.jsonl | python3 -m json.tool
 
 ```text
 senzing-demo/
+├── CORE-CONCEPTS.md             ← fundamentals (read first)
 ├── CHEATSHEET.md                ← this file
 ├── setup-env.sh                 ← source every session (Senzing)
 ├── setup-minio-env.sh           ← source for MinIO/S3 pipeline

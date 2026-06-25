@@ -5,7 +5,7 @@ Step-by-step guide for **mapping your own data** and **operating the pipeline lo
 
 **Official curriculum:** [Data Mapping – Senzing®](https://senzing.zendesk.com/hc/en-us/sections/360000385913-Data-Mapping)
 
-**Prerequisites:** Completed [EDA-TUTORIAL.md](./EDA-TUTORIAL.md) (explore, snapshot, audit).
+**Prerequisites:** [CORE-CONCEPTS.md](./CORE-CONCEPTS.md) (recommended) and [EDA-TUTORIAL.md](./EDA-TUTORIAL.md) (explore, snapshot, audit).
 
 **Companion:** [CHEATSHEET.md](./CHEATSHEET.md) · [EXERCISES.md](./EXERCISES.md) · [EDA-TUTORIAL.md](./EDA-TUTORIAL.md) · **[EXPLORER-SESSION.md](./EXPLORER-SESSION.md)** (how to open `sz_explorer`)
 
@@ -13,7 +13,7 @@ Step-by-step guide for **mapping your own data** and **operating the pipeline lo
 
 ## Table of contents
 
-**Workbooks:** [CHEATSHEET.md](./CHEATSHEET.md) · [EXERCISES.md](./EXERCISES.md) · [EDA-TUTORIAL.md](./EDA-TUTORIAL.md)
+**Workbooks:** [CORE-CONCEPTS.md](./CORE-CONCEPTS.md) · [CHEATSHEET.md](./CHEATSHEET.md) · [EXERCISES.md](./EXERCISES.md) · [EDA-TUTORIAL.md](./EDA-TUTORIAL.md)
 
 - [Curriculum map (official → this lab)](#curriculum-map-official-this-lab)
 - [Before every session](#before-every-session)
@@ -133,6 +133,8 @@ pipeline/load_my_team.sh       ← one-command load
 
 <a id="b1-generic-entity-specification-read-first"></a>
 ## B1 — Generic Entity Specification (read first)
+
+**Lab primer:** [CORE-CONCEPTS.md § 5–6](./CORE-CONCEPTS.md#5-resolution-attributes-vs-payload) (resolution vs payload, mapping flow).
 
 **Official:** [Generic Entity Specification](https://senzing.com/docs/entity_specification/) (moved from [Zendesk article](https://senzing.zendesk.com/hc/en-us/articles/231925448))
 

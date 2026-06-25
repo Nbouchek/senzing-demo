@@ -3,17 +3,20 @@
 Follow this workbook **in order**. Each exercise builds on the previous one.  
 Companion reference: [CHEATSHEET.md](./CHEATSHEET.md)
 
+**New to entity resolution?** Read **[CORE-CONCEPTS.md](./CORE-CONCEPTS.md)** first (30 min).
+
 **Stack:** Mac + Docker + PostgreSQL + MinIO (local S3). **No AWS account required.**
 
-**Related workbooks:** [EDA-TUTORIAL.md](./EDA-TUTORIAL.md) · [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md) · **[EXPLORER-SESSION.md](./EXPLORER-SESSION.md)**
+**Related workbooks:** [CORE-CONCEPTS.md](./CORE-CONCEPTS.md) · [EDA-TUTORIAL.md](./EDA-TUTORIAL.md) · [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md) · **[EXPLORER-SESSION.md](./EXPLORER-SESSION.md)**
 
 ---
 
 ## Table of contents
 
-**Workbooks:** [CHEATSHEET.md](./CHEATSHEET.md) · [EDA-TUTORIAL.md](./EDA-TUTORIAL.md) · [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md)
+**Workbooks:** [CORE-CONCEPTS.md](./CORE-CONCEPTS.md) · [CHEATSHEET.md](./CHEATSHEET.md) · [EDA-TUTORIAL.md](./EDA-TUTORIAL.md) · [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md)
 
 - [Before you start](#before-you-start)
+  - [Core concepts (read first)](#core-concepts-read-first)
   - [Prerequisites](#prerequisites)
   - [Three places you run commands](#three-places-you-run-commands)
   - [Every session — run first (Mac)](#every-session-run-first-mac)
@@ -97,6 +100,18 @@ Companion reference: [CHEATSHEET.md](./CHEATSHEET.md)
 
 <a id="before-you-start"></a>
 ## Before you start
+
+<a id="core-concepts-read-first"></a>
+### Core concepts (read first)
+
+If terms like *entity*, *merged*, *data source*, or *MinIO vs S3* are new, read **[CORE-CONCEPTS.md](./CORE-CONCEPTS.md)** before Exercise 0. It covers:
+
+- Record vs entity vs DATA_SOURCE  
+- Merged vs related vs disclosed relationships  
+- Mapping and pipeline flow (Parquet → MinIO → JSONL → load)  
+- The three EDA tools and when to use each  
+
+Quick reference later: [CHEATSHEET.md § 1](./CHEATSHEET.md#1-core-concepts-read-first).
 
 <a id="prerequisites"></a>
 ### Prerequisites
@@ -1129,4 +1144,4 @@ source ./setup-env.sh && source ./setup-minio-env.sh
 
 ---
 
-*Workbooks: [CHEATSHEET.md](./CHEATSHEET.md) · [EDA-TUTORIAL.md](./EDA-TUTORIAL.md) · [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md)*
+*Workbooks: [CORE-CONCEPTS.md](./CORE-CONCEPTS.md) · [CHEATSHEET.md](./CHEATSHEET.md) · [EDA-TUTORIAL.md](./EDA-TUTORIAL.md) · [DATA-MAPPING-TUTORIAL.md](./DATA-MAPPING-TUTORIAL.md)*

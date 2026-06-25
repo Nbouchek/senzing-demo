@@ -99,4 +99,4 @@ Do **not** type `quit` at the container `#` prompt — that gives `bash: quit: c
 
 ---
 
-**Back to:** [README.md](./README.md) · [CHEATSHEET.md](./CHEATSHEET.md) · [EXERCISES.md](./EXERCISES.md)
+**Back to:** [README.md](./README.md) · [CORE-CONCEPTS.md](./CORE-CONCEPTS.md) · [CHEATSHEET.md](./CHEATSHEET.md) · [EXERCISES.md](./EXERCISES.md)

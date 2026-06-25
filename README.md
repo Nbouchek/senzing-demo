@@ -28,6 +28,7 @@ Load Senzing truth-set data, explore matches with EDA tools, map your own CSV, a
 
 ---
 
+<a id="quick-start"></a>
 ## Quick start
 
 ```bash
@@ -98,7 +99,8 @@ Senzing does **not** load Parquet directly. The pipeline always: **Parquet → m
 
 | Guide | Topics |
 |-------|--------|
-| [**EXPLORER-SESSION.md**](EXPLORER-SESSION.md) | **Start here for sz_explorer** — open, use, exit |
+| [**CORE-CONCEPTS.md**](CORE-CONCEPTS.md) | **Start here if new** — records, entities, merged vs related, MinIO = S3 |
+| [**EXPLORER-SESSION.md**](EXPLORER-SESSION.md) | How to open `sz_explorer`, use it, exit |
 | [**CHEATSHEET.md**](CHEATSHEET.md) | Quick reference — commands, errors, workflows |
 | [**EDA-TUTORIAL.md**](EDA-TUTORIAL.md) | Official [Senzing EDA](https://senzing.zendesk.com/hc/en-us/sections/360009388534-Exploratory-Data-Analysis-EDA) series |
 | [**EXERCISES.md**](EXERCISES.md) | Hands-on exercises 0–15 with checklists |
@@ -106,6 +108,7 @@ Senzing does **not** load Parquet directly. The pipeline always: **Parquet → m
 
 **Suggested path**
 
+0. **CORE-CONCEPTS.md** — vocabulary and mental model (30 min read)  
 1. EDA-TUTORIAL (Parts 0–6) — explore, snapshot, audit  
 2. EXERCISES 0–8 — truth set, MinIO pipeline, vendors  
 3. DATA-MAPPING-TUTORIAL (Phase B & C) — map `my_team.csv`, operate pipeline  
@@ -163,7 +166,8 @@ docker run --rm -it -v ${PWD}:/data -w /data \
 ```text
 senzing-demo/
 ├── README.md                    ← you are here
-├── EXPLORER-SESSION.md          ← how to open sz_explorer (read this first)
+├── CORE-CONCEPTS.md             ← entity resolution fundamentals (read first)
+├── EXPLORER-SESSION.md          ← how to open sz_explorer
 ├── CHEATSHEET.md                ← command reference
 ├── EDA-TUTORIAL.md              ← EDA workbook
 ├── EXERCISES.md                 ← step-by-step exercises
